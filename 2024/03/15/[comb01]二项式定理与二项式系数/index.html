@@ -1,0 +1,317 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>二项式定理与二项式系数 | 『初丶晴』的小窝</title><meta name="author" content="Aiopr_2378"><meta name="copyright" content="Aiopr_2378"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="二项式定理与二项式系数 本章节介绍二项式定理与相关推论定理，在组合数学中有重要作用。 一、二项式定理与二项式系数1.1 &amp;emsp; 二项式定理定理 1（二项式定理） &amp;emsp; 设 $n$ 是正整数。对所有的 $x$ 和 $y$，有  (x+y)^n&#x3D;\sum\limits_{k&#x3D;0}^n\binom nk x^{n-k}y^k\tag 1 证明 &amp;emsp; 考虑把 $(x+y)^n$ 展开">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二项式定理与二项式系数">
+<meta property="og:url" content="http://aiopr-2378.github.io/2024/03/15/[comb01]%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E4%B8%8E%E4%BA%8C%E9%A1%B9%E5%BC%8F%E7%B3%BB%E6%95%B0/index.html">
+<meta property="og:site_name" content="『初丶晴』的小窝">
+<meta property="og:description" content="二项式定理与二项式系数 本章节介绍二项式定理与相关推论定理，在组合数学中有重要作用。 一、二项式定理与二项式系数1.1 &amp;emsp; 二项式定理定理 1（二项式定理） &amp;emsp; 设 $n$ 是正整数。对所有的 $x$ 和 $y$，有  (x+y)^n&#x3D;\sum\limits_{k&#x3D;0}^n\binom nk x^{n-k}y^k\tag 1 证明 &amp;emsp; 考虑把 $(x+y)^n$ 展开">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.rmb.bdstatic.com/bjh/864c9dd35fc26bcaa69335bf9e92a83a.jpeg">
+<meta property="article:published_time" content="2024-03-15T13:04:31.507Z">
+<meta property="article:modified_time" content="2024-03-15T13:10:26.978Z">
+<meta property="article:author" content="Aiopr_2378">
+<meta property="article:tag" content="数学知识">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.rmb.bdstatic.com/bjh/864c9dd35fc26bcaa69335bf9e92a83a.jpeg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://aiopr-2378.github.io/2024/03/15/[comb01]%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E4%B8%8E%E4%BA%8C%E9%A1%B9%E5%BC%8F%E7%B3%BB%E6%95%B0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '二项式定理与二项式系数',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-15 21:10:26'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.luogu.com.cn/upload/image_hosting/9nnrd5ov.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic.rmb.bdstatic.com/bjh/864c9dd35fc26bcaa69335bf9e92a83a.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="『初丶晴』的小窝"><span class="site-name">『初丶晴』的小窝</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">二项式定理与二项式系数</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-15T13:04:31.507Z" title="发表于 2024-03-15 21:04:31">2024-03-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-15T13:10:26.978Z" title="更新于 2024-03-15 21:10:26">2024-03-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">组合数学学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="二项式定理与二项式系数"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>二项式定理与二项式系数</p>
+<p>本章节介绍二项式定理与相关推论定理，在组合数学中有重要作用。</p>
+<h1 id="一、二项式定理与二项式系数"><a href="#一、二项式定理与二项式系数" class="headerlink" title="一、二项式定理与二项式系数"></a>一、二项式定理与二项式系数</h1><h2 id="1-1-emsp-二项式定理"><a href="#1-1-emsp-二项式定理" class="headerlink" title="1.1 &emsp; 二项式定理"></a>1.1 &emsp; 二项式定理</h2><p><strong>定理 1（二项式定理）</strong> &emsp; 设 $n$ 是正整数。对所有的 $x$ 和 $y$，有</p>
+<script type="math/tex; mode=display">
+(x+y)^n=\sum\limits_{k=0}^n\binom nk x^{n-k}y^k\tag 1</script><blockquote>
+<p><strong>证明</strong> &emsp; 考虑把 $(x+y)^n$ 展开，结果有 $2^n$ 项，每一项都可以写成 $x^{n-k}y^k$ 的形式。对于每个形式，相当于在 $n$ 个因子中选择 $k$ 个选择 $x$，故其系数为 $\binom n k$​。</p>
+</blockquote>
+<h2 id="1-2-emsp-组合相关推论"><a href="#1-2-emsp-组合相关推论" class="headerlink" title="1.2 &emsp; 组合相关推论"></a>1.2 &emsp; 组合相关推论</h2><p>如果对于二项式定理，取 $y=1$，则有如下特殊形式。</p>
+<p><strong>定理 2</strong> &emsp; 设 $n$ 为正整数。对于所有的 $x$，有</p>
+<script type="math/tex; mode=display">
+(1+x)^n=\sum\limits_{k=0}^n \binom n k x^k\tag{2}</script><p>证明略去。</p>
+<p><strong>定理 3</strong> &emsp; 对于正整数 $n,k$，有</p>
+<script type="math/tex; mode=display">
+k\binom n k =n\binom {n-1}{k-1}\tag{3}</script><blockquote>
+<p><strong>证明</strong> &emsp; 如果 $k&gt;n$，则 $\binom n k=0$。否则，有</p>
+<script type="math/tex; mode=display">
+k\binom n k =\dfrac{n(n-1)\cdots (n-k+1)}{k(k-1)\cdots 1}\times k=\dfrac{n(n-1)\cdots (n-k+1)}{(k-1)(k-2)\cdots 1}</script><p>而又有</p>
+<script type="math/tex; mode=display">
+n\binom {n-1}{k-1}=\dfrac{(n-1)(n-2)\cdots (n-k+1)}{(k-1)(k-2)\cdots 1}\times n=\dfrac{n(n-1)\cdots (n-k+1)}{(k-1)(k-2)\cdots 1}=k\binom n k</script><p>得证。</p>
+</blockquote>
+<p>显然根据组合意义，有</p>
+<script type="math/tex; mode=display">
+\sum\limits_{k=0}^n\binom n k=2^n\tag{4}</script><p>下面给出另一有关定理。</p>
+<p><strong>定理 4</strong> &emsp; 对于正整数 $n&gt;1$，有如下二式成立</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\binom n 0 +\binom n 2 +\binom n 4 + \cdots &= 2^{n-1} \\
+\binom n 1 +\binom n 3 +\binom n 5 + \cdots &= 2^{n-1}
+\end{aligned}
+\tag{5}</script><blockquote>
+<p><strong>证明</strong> &emsp; 对于二项式定理 $\sum\limits_{k=0}^n\binom n k x^{n-k}y^k$，取 $x=1,y=-1$ 时可以得到</p>
+<script type="math/tex; mode=display">
+\binom n 0 -\binom n 1+\binom n 2-\cdots +(-1)^n\binom n n =0</script><p>移项可得</p>
+<script type="math/tex; mode=display">
+\binom n 0+\binom n 2+\cdots =\binom n 1+\binom n 3+\cdots\</script><p>根据 $(4)$ 式可以得到上式左右两边加和为 $2^n$，故可知左右两边分别等于 $2^{n-1}$。</p>
+<p>得证。</p>
+</blockquote>
+<p><strong>定理 5</strong> &emsp; 对于任意正整数 $n$，有</p>
+<script type="math/tex; mode=display">
+nx(1+x)^{n-1}=\sum\limits_{k=1}^n k\binom n k x^k\tag 6</script><blockquote>
+<p><strong>证明</strong> &emsp; 对 $(2)$ 式两边关于 $x$ 求导，得到</p>
+<script type="math/tex; mode=display">
+n(1+x)^{n-1}=\sum\limits_{k=1}^nk\binom n k x^{k-1}</script><p>两边同乘 $x$ 即可得证。</p>
+</blockquote>
+<p>对于上述定理还有一个特殊形式，当 $x=1$ 时，有</p>
+<script type="math/tex; mode=display">
+n2^{n-1}=\sum\limits_{k=1}^nk\binom nk \tag 7</script><p>如果对上述定理再同时关于 $x$ 求导，可以得到</p>
+<script type="math/tex; mode=display">
+n(n+1)2^{n-2}=\sum\limits_{k=1}^n k^2\binom nk\tag 8</script><p><strong>定理 6</strong> &emsp; 关于帕斯卡三角形各行上的数字的平方和，有如下等式</p>
+<script type="math/tex; mode=display">
+\sum\limits_{k=0}^n \binom nk^2=\binom {2n} n\tag 9</script><blockquote>
+<p><strong>证明</strong> &emsp; 设 $S$ 为一个大小为 $2n$ 的集合，将其分为 $A,B$ 两个大小均为 $n$ 的不交集合。考虑选出 $S$ 的每一个 $n$ 子集，设其中元素在 $A$ 集合中的有 $k$ 个，则在 $B$ 集合中的有 $n-k$ 个，其中 $0\le k\le n$。</p>
+<p>按照 $k$ 的大小建立 $k+1$ 个集合 $\mathscr{C}_k$，表示由包含 $k$ 个 $A$ 集合中的元素与 $n-k$ 个 $B$ 集合组成的 $n$ 子集的集合。显然有</p>
+<script type="math/tex; mode=display">
+\binom {2n} n=\sum\limits_{i=0}^n | \mathscr C_i|</script><p>考虑每一个 $\mathscr C_i$ 的元素个数，其中每个 $n$ 子集包含的 $k$ 个 $A$ 中元素有 $\binom n k$ 种，$B$ 中元素有 $\binom n {n-k}$ 中，故有</p>
+<script type="math/tex; mode=display">
+\sum\limits_{i=0}^n |\mathscr C_i|=\sum\limits_{i=0}^n \binom n k\binom n {n-k}=\sum\limits _{i=0}^n \binom n k^2=\binom {2n} n</script><p>得证。</p>
+</blockquote>
+<p><strong>定理 7</strong> &emsp; 对于正整数 $n,k$，有</p>
+<script type="math/tex; mode=display">
+\binom {n+1}{k+1}=\sum\limits_{i=0}^n\binom i k</script><blockquote>
+<p><strong>证明</strong> &emsp; 对于二项式 $\binom n k$ 不断应用基本公式 $\binom n k=\binom {n-1} k+\binom {n-1}{k-1}$，可以得到</p>
+<script type="math/tex; mode=display">
+\binom nk=\binom 0k+\binom 0{k-1}+\cdots +\binom {n-2}{k-1}+\binom {n-1}{k-1}</script><p>根据 $\binom 0k=0$ 消去该项，并用 $n+1$ 取代 $n$，用 $k+1$ 取代 $k$ 得证。</p>
+</blockquote>
+<h2 id="1-3-emsp-二项式系数的单峰性"><a href="#1-3-emsp-二项式系数的单峰性" class="headerlink" title="1.3 &emsp; 二项式系数的单峰性"></a>1.3 &emsp; 二项式系数的单峰性</h2><p>通过考察帕斯卡三角的某一行，不难发现单峰性</p>
+<script type="math/tex; mode=display">
+\binom n1<\binom n2<\cdots <\binom nt,\binom nt>\binom n{t+1}>\cdots>\binom nn</script><p>当 $n$ 为奇数时，最大值点 $t=\lfloor\dfrac n2\rfloor$。</p>
+<p>当 $n$ 为偶数时，有两个最大值点 $\dfrac n2$ 和 $\dfrac n2+1$。</p>
+<h2 id="1-4-emsp-Sperner-定理"><a href="#1-4-emsp-Sperner-定理" class="headerlink" title="1.4 &emsp; Sperner 定理"></a>1.4 &emsp; Sperner 定理</h2><p>对于一个 $n$ 元素集合 $S$，定义 $S$ 的子集的集合 $\mathscr C$ 是一条<strong>链</strong>，当且仅当对于 $\mathscr C$​​ 的每一对子集，总有包含与被包含关系。</p>
+<p>定义 $S$ 的一条<strong>最大链</strong>为元素个数最多的子集集合 $\mathscr C$。</p>
+<p>定义 $S$ 的子集的集合 $\mathscr C$ 是一条<strong>反链</strong>，当且仅当 $\mathscr C$ 的每对元素都没有包含与被包含关系。</p>
+<p><strong>定理 8（Sperner 定理）</strong> &emsp; 设 $S$ 为 $n$ 元素集合，则 $S$ 的一个反链上至多包含 $\dbinom n{\lfloor\frac n2\rfloor}$ 个集合。</p>
+<blockquote>
+<p><strong>证明</strong> &emsp; 考虑什么样的集合 $\mathscr C$ 会成为<strong>最大链</strong>。不难发现，当形如 $\mathscr C=\{\{a_1\},\{a_1,a_2\},\cdots,\{a_1,a_2,\cdots a_n\}\}$ 的时候会成为最大链，最大链长度为 $n$，其中 $a_1,a_2\cdots a_n$ 为一个 $1\sim n$ 的<strong>排列</strong>，最大链个数为 $n!$。</p>
+<p>当我们考虑一个 $S$ 的子集 $A$ 的时候，固定 $|A|=k$ 时，发现<strong>包含集合 $A$ 的最大链的个数</strong>为</p>
+<script type="math/tex; mode=display">
+k!(n-k)!</script><p>在构成的最大链中，其中有 $k!$ 个是包含于 $A$ 的集合数目，$(n-k)!$ 是包含 $A$​ 的集合数目。</p>
+<p>同时不难发现：<strong>每条链至多能包含任意一个反链的一个成员</strong>，反证不难。</p>
+<p>现在要求反链的最大长度，根据上述引理，可以唯一转化为求包含反链成员的不同最大链长度。</p>
+<p>设 $\mathscr A$ 是反链，$A$ 是反链中的一个元素，$\mathscr C$ 是包含 $A$ 的最大链。设 $\beta=|\mathscr A|$ 同时等于合法的最大链 $\mathscr C$ 的个数。根据上述论证，有 $\beta\le n!$。如果 $|A|=k$，则有 $k!(n-k)!$ 个包含 $A$ 的最大链 $\mathscr C$。</p>
+<p>设 $\alpha _k$ 是反链 $\mathscr A$ 中大小为 $k$ 的元素个数，有 $|\mathscr A|=\sum\limits_{k=0}^n \alpha_k$，于是</p>
+<script type="math/tex; mode=display">
+\beta=\sum\limits_{k=0}^n \alpha_k k!(n-k)!\le n!</script><p>通过化简得到</p>
+<script type="math/tex; mode=display">
+\sum\limits_{k=0}^n\dfrac{\alpha_k}{\dbinom nk}\le 1</script><p>根据二项式系数的单峰性，当 $k=\lfloor \dfrac n2 \rfloor$ 的时候 $\dbinom nk$ 最大，于是有</p>
+<script type="math/tex; mode=display">
+|\mathscr A|\le \sum\limits_{k=0}^n\alpha _k\le \binom n {\lfloor \dfrac n2 \rfloor}</script><p>得证。</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://aiopr-2378.github.io">Aiopr_2378</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://aiopr-2378.github.io/2024/03/15/[comb01]%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E4%B8%8E%E4%BA%8C%E9%A1%B9%E5%BC%8F%E7%B3%BB%E6%95%B0/">http://aiopr-2378.github.io/2024/03/15/[comb01]%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E4%B8%8E%E4%BA%8C%E9%A1%B9%E5%BC%8F%E7%B3%BB%E6%95%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://aiopr-2378.github.io" target="_blank">『初丶晴』的小窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/">数学知识</a></div><div class="post_share"><div class="social-share" data-image="https://pic.rmb.bdstatic.com/bjh/864c9dd35fc26bcaa69335bf9e92a83a.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/02/21/%E3%80%8E%E5%88%9D%E3%80%81%E6%99%B4%E3%80%8F%E6%97%A7%E5%BF%86-%E5%8D%B7%E4%BA%8C/" title="『初丶晴』旧忆 &lt;二&gt;"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/c4b6cd8b8d3f848d3cac27383740d368.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">『初丶晴』旧忆 &lt;二&gt;</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/10/13/Ramsey%20%E5%AE%9A%E7%90%86/" title="Ramsey 定理"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/05dc677dfc10321e8aecd1f747074b26.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-13</div><div class="title">Ramsey 定理</div></div></a></div><div><a href="/2024/01/14/%5Bcalculus01%5D%E6%9E%81%E9%99%90%E5%AF%BC%E8%AE%BA%E4%B8%8E%E5%BE%AE%E5%88%86/" title="极限导论与微分"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/97c0f1af864609994177c4519c5fb0bd.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-14</div><div class="title">极限导论与微分</div></div></a></div><div><a href="/2024/01/14/%5Bcalculus02%5D%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E6%9E%81%E9%99%90%E5%92%8C%E5%AF%BC%E6%95%B0/" title="三角函数的极限和导数"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/602b0e19b464ce3d44275df2735db093.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-14</div><div class="title">三角函数的极限和导数</div></div></a></div><div><a href="/2024/01/19/%5Bcalculus03%5D%E9%9A%90%E5%87%BD%E6%95%B0%E6%B1%82%E5%AF%BC/" title="隐函数求导"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/17dd7cc7361a6ffe2eada2274fded14d.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-19</div><div class="title">隐函数求导</div></div></a></div><div><a href="/2024/01/19/%5Bcalculus04%5D%E6%8C%87%E6%95%B0%E3%80%81%E5%AF%B9%E6%95%B0%E3%80%81%E5%8F%8C%E6%9B%B2%E5%87%BD%E6%95%B0%E7%9A%84%E5%AF%BC%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90/" title="指数、对数、双曲函数的导数与极限"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/0c833a94ae79e6ea1daefeeae408f1bf.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-19</div><div class="title">指数、对数、双曲函数的导数与极限</div></div></a></div><div><a href="/2022/05/05/%E5%90%8C%E4%BD%99/" title="同余"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/d3ebda876182694665af2c882af19fc6.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-05</div><div class="title">同余</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.luogu.com.cn/upload/image_hosting/9nnrd5ov.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Aiopr_2378</div><div class="author-info__description">欢唱，以我之名！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Aiopr-2378"><i class="fab fa-github"></i><span>连接喵星...</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Aiopr-2378" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="https://space.bilibili.com/483635714" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili" style="color: #00FFFF;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">本网站为个人blog, 用于记录学习笔记与日常生活。<br> 主页背景为随机图片, 不保证图片质量喵~
+<p align="center">---❄❄❄---</p>
+计划更新：微积分学习笔记、计数问题笔记 <br> 近期更新：微积分学习笔记、杂题摘录
+<p align="center">---❄❄❄---</p>
+关注可爱『初丶晴』喵~ <br> 关注可爱『初丶晴』谢谢喵~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E4%B8%8E%E4%BA%8C%E9%A1%B9%E5%BC%8F%E7%B3%BB%E6%95%B0"><span class="toc-text">一、二项式定理与二项式系数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-emsp-%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86"><span class="toc-text">1.1   二项式定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-emsp-%E7%BB%84%E5%90%88%E7%9B%B8%E5%85%B3%E6%8E%A8%E8%AE%BA"><span class="toc-text">1.2   组合相关推论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-emsp-%E4%BA%8C%E9%A1%B9%E5%BC%8F%E7%B3%BB%E6%95%B0%E7%9A%84%E5%8D%95%E5%B3%B0%E6%80%A7"><span class="toc-text">1.3   二项式系数的单峰性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-emsp-Sperner-%E5%AE%9A%E7%90%86"><span class="toc-text">1.4   Sperner 定理</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/03/15/%5Bcomb01%5D%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E4%B8%8E%E4%BA%8C%E9%A1%B9%E5%BC%8F%E7%B3%BB%E6%95%B0/" title="二项式定理与二项式系数"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/864c9dd35fc26bcaa69335bf9e92a83a.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="二项式定理与二项式系数"/></a><div class="content"><a class="title" href="/2024/03/15/%5Bcomb01%5D%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E4%B8%8E%E4%BA%8C%E9%A1%B9%E5%BC%8F%E7%B3%BB%E6%95%B0/" title="二项式定理与二项式系数">二项式定理与二项式系数</a><time datetime="2024-03-15T13:04:31.507Z" title="发表于 2024-03-15 21:04:31">2024-03-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/02/21/%E3%80%8E%E5%88%9D%E3%80%81%E6%99%B4%E3%80%8F%E6%97%A7%E5%BF%86-%E5%8D%B7%E4%BA%8C/" title="『初丶晴』旧忆 &lt;二&gt;"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/c4b6cd8b8d3f848d3cac27383740d368.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="『初丶晴』旧忆 &lt;二&gt;"/></a><div class="content"><a class="title" href="/2024/02/21/%E3%80%8E%E5%88%9D%E3%80%81%E6%99%B4%E3%80%8F%E6%97%A7%E5%BF%86-%E5%8D%B7%E4%BA%8C/" title="『初丶晴』旧忆 &lt;二&gt;">『初丶晴』旧忆 &lt;二&gt;</a><time datetime="2024-02-21T13:56:12.857Z" title="发表于 2024-02-21 21:56:12">2024-02-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/19/%5Bcalculus04%5D%E6%8C%87%E6%95%B0%E3%80%81%E5%AF%B9%E6%95%B0%E3%80%81%E5%8F%8C%E6%9B%B2%E5%87%BD%E6%95%B0%E7%9A%84%E5%AF%BC%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90/" title="指数、对数、双曲函数的导数与极限"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/0c833a94ae79e6ea1daefeeae408f1bf.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="指数、对数、双曲函数的导数与极限"/></a><div class="content"><a class="title" href="/2024/01/19/%5Bcalculus04%5D%E6%8C%87%E6%95%B0%E3%80%81%E5%AF%B9%E6%95%B0%E3%80%81%E5%8F%8C%E6%9B%B2%E5%87%BD%E6%95%B0%E7%9A%84%E5%AF%BC%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90/" title="指数、对数、双曲函数的导数与极限">指数、对数、双曲函数的导数与极限</a><time datetime="2024-01-19T14:43:23.753Z" title="发表于 2024-01-19 22:43:23">2024-01-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/19/%5Bcalculus03%5D%E9%9A%90%E5%87%BD%E6%95%B0%E6%B1%82%E5%AF%BC/" title="隐函数求导"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/17dd7cc7361a6ffe2eada2274fded14d.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="隐函数求导"/></a><div class="content"><a class="title" href="/2024/01/19/%5Bcalculus03%5D%E9%9A%90%E5%87%BD%E6%95%B0%E6%B1%82%E5%AF%BC/" title="隐函数求导">隐函数求导</a><time datetime="2024-01-19T14:43:23.735Z" title="发表于 2024-01-19 22:43:23">2024-01-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/14/%5Bcalculus02%5D%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E6%9E%81%E9%99%90%E5%92%8C%E5%AF%BC%E6%95%B0/" title="三角函数的极限和导数"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/602b0e19b464ce3d44275df2735db093.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="三角函数的极限和导数"/></a><div class="content"><a class="title" href="/2024/01/14/%5Bcalculus02%5D%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E6%9E%81%E9%99%90%E5%92%8C%E5%AF%BC%E6%95%B0/" title="三角函数的极限和导数">三角函数的极限和导数</a><time datetime="2024-01-14T04:31:08.435Z" title="发表于 2024-01-14 12:31:08">2024-01-14</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Aiopr_2378</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
