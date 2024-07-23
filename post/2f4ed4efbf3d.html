@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>同余 | 『初丶晴』的小窝</title><meta name="author" content="Aiopr_2378"><meta name="copyright" content="Aiopr_2378"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="同余 本章主要记录有关同余、费马小定理、欧拉定理、扩展欧几里得算法、裴蜀定理、乘法逆元、威尔逊定理、线性同余方程、中国剩余定理、扩展中国剩余定理、BSGS以及扩展BSGS的学习笔记。 由于内容复杂且关联较少，建议配备 ctrl+F 进行快乐食用。 正在继更ing 一、基础知识这个板块着重介绍同余的基本知识，虽然多为数学竞赛内容，但也对信息学竞赛有不少帮助，定理和性质为拓展内容。 本部分参考《初等数">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>同余 | 『初丶晴』的小窝</title><meta name="author" content="Aiopr_2378"><meta name="copyright" content="Aiopr_2378"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="同余 本章主要记录有关同余、费马小定理、欧拉定理、扩展欧几里得算法、裴蜀定理、乘法逆元、威尔逊定理、线性同余方程、中国剩余定理、扩展中国剩余定理、BSGS以及扩展BSGS的学习笔记。 由于内容复杂且关联较少，建议配备 ctrl+F 进行快乐食用。 正在继更ing 一、基础知识 这个板块着重介绍同余的基本知识，虽然多为数学竞赛内容，但也对信息学竞赛有不少帮助，定理和性质为拓展内容。 本">
 <meta property="og:type" content="article">
 <meta property="og:title" content="同余">
 <meta property="og:url" content="http://aiopr-2378.github.io/post/2f4ed4efbf3d.html">
 <meta property="og:site_name" content="『初丶晴』的小窝">
-<meta property="og:description" content="同余 本章主要记录有关同余、费马小定理、欧拉定理、扩展欧几里得算法、裴蜀定理、乘法逆元、威尔逊定理、线性同余方程、中国剩余定理、扩展中国剩余定理、BSGS以及扩展BSGS的学习笔记。 由于内容复杂且关联较少，建议配备 ctrl+F 进行快乐食用。 正在继更ing 一、基础知识这个板块着重介绍同余的基本知识，虽然多为数学竞赛内容，但也对信息学竞赛有不少帮助，定理和性质为拓展内容。 本部分参考《初等数">
+<meta property="og:description" content="同余 本章主要记录有关同余、费马小定理、欧拉定理、扩展欧几里得算法、裴蜀定理、乘法逆元、威尔逊定理、线性同余方程、中国剩余定理、扩展中国剩余定理、BSGS以及扩展BSGS的学习笔记。 由于内容复杂且关联较少，建议配备 ctrl+F 进行快乐食用。 正在继更ing 一、基础知识 这个板块着重介绍同余的基本知识，虽然多为数学竞赛内容，但也对信息学竞赛有不少帮助，定理和性质为拓展内容。 本">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pic.rmb.bdstatic.com/bjh/d3ebda876182694665af2c882af19fc6.jpeg">
 <meta property="article:published_time" content="2022-05-05T15:02:05.000Z">
@@ -168,184 +168,571 @@
     detectApple()
     })(window)</script><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://sy.hhwdd.com/RequireFile.do?fid=jMdvYrki" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic.rmb.bdstatic.com/bjh/d3ebda876182694665af2c882af19fc6.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="『初丶晴』的小窝"><span class="site-name">『初丶晴』的小窝</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">同余</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-05T15:02:05.000Z" title="发表于 2022-05-05 23:02:05">2022-05-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-17T13:33:05.000Z" title="更新于 2023-07-17 21:33:05">2023-07-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">算法学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">346</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="同余"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>同余</p>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://sy.hhwdd.com/RequireFile.do?fid=jMdvYrki" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic.rmb.bdstatic.com/bjh/d3ebda876182694665af2c882af19fc6.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="『初丶晴』的小窝"><span class="site-name">『初丶晴』的小窝</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">同余</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-05T15:02:05.000Z" title="发表于 2022-05-05 23:02:05">2022-05-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-17T13:33:05.000Z" title="更新于 2023-07-17 21:33:05">2023-07-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">算法学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>20分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="同余"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>同余</p>
 <p>本章主要记录有关同余、费马小定理、欧拉定理、扩展欧几里得算法、裴蜀定理、乘法逆元、威尔逊定理、线性同余方程、中国剩余定理、扩展中国剩余定理、BSGS以及扩展BSGS的学习笔记。</p>
-<p>由于内容复杂且关联较少，建议配备 <code>ctrl+F</code> 进行快乐食用。</p>
+<p>由于内容复杂且关联较少，建议配备 <code>ctrl+F</code>
+进行快乐食用。</p>
 <p>正在继更ing</p>
-<h1 id="一、基础知识"><a href="#一、基础知识" class="headerlink" title="一、基础知识"></a>一、基础知识</h1><p>这个板块着重介绍同余的基本知识，虽然多为数学竞赛内容，但也对信息学竞赛有不少帮助，定理和性质为拓展内容。</p>
+<h1 id="一基础知识">一、基础知识</h1>
+<p>这个板块着重介绍同余的基本知识，虽然多为数学竞赛内容，但也对信息学竞赛有不少帮助，定理和性质为拓展内容。</p>
 <p>本部分参考《初等数论》进行撰写。</p>
-<h2 id="1-1-quad-基本定义、定理与性质"><a href="#1-1-quad-基本定义、定理与性质" class="headerlink" title="1.1$\quad$基本定义、定理与性质"></a>1.1$\quad$基本定义、定理与性质</h2><p><strong>定义1</strong>（<strong>同余</strong>）$\quad$ 设 $m\neq0$。若 $m\mid a-b$，即 $a-b=km$，则称 $m$ 为<strong>模</strong>，$a$ <strong>同于与</strong> $b$ <strong>模</strong> $m$ 以及 $b$ <strong>是</strong> $a$ <strong>对模</strong> $m$ <strong>的剩余</strong>，记作</p>
-<script type="math/tex; mode=display">
-a\equiv b\pmod{m} \tag{1}</script><p>不然，则称 $a$ <strong>不同余于</strong> $b$ <strong>模</strong> $m$，$b$ <strong>不是</strong> $a$ <strong>对模</strong> $m$ <strong>的剩余</strong>，记作 $a\not\equiv b\pmod{m}$</p>
-<p>式 $(1)$ 称为<strong>模</strong> $m$ <strong>的同余式</strong>，或简称<strong>同余式</strong>。</p>
-<p>由于 $m\mid a-b$ 等价于 $-m\mid a-b$ ，所以同余式 $(1)$ 等价于</p>
-<script type="math/tex; mode=display">
-a\equiv b\pmod{(-m)}</script><p><strong>定理1</strong>$\quad$ $a$ 同余于 $b$ 模 $m$ 的充要条件是 $a$ 和 $b$ 被 $m$ 除后所得的最小非负余数相等，即若</p>
-<script type="math/tex; mode=display">
+<h2 id="quad基本定义定理与性质">1.1<span
+class="math inline">\(\quad\)</span>基本定义、定理与性质</h2>
+<p><strong>定义1</strong>（<strong>同余</strong>）<span
+class="math inline">\(\quad\)</span> 设 <span
+class="math inline">\(m\neq0\)</span>。若 <span
+class="math inline">\(m\mid a-b\)</span>，即 <span
+class="math inline">\(a-b=km\)</span>，则称 <span
+class="math inline">\(m\)</span> 为<strong>模</strong>，<span
+class="math inline">\(a\)</span> <strong>同于与</strong> <span
+class="math inline">\(b\)</span> <strong>模</strong> <span
+class="math inline">\(m\)</span> 以及 <span
+class="math inline">\(b\)</span> <strong>是</strong> <span
+class="math inline">\(a\)</span> <strong>对模</strong> <span
+class="math inline">\(m\)</span> <strong>的剩余</strong>，记作 <span
+class="math display">\[
+a\equiv b\pmod{m} \tag{1}
+\]</span> 不然，则称 <span class="math inline">\(a\)</span>
+<strong>不同余于</strong> <span class="math inline">\(b\)</span>
+<strong>模</strong> <span class="math inline">\(m\)</span>，<span
+class="math inline">\(b\)</span> <strong>不是</strong> <span
+class="math inline">\(a\)</span> <strong>对模</strong> <span
+class="math inline">\(m\)</span> <strong>的剩余</strong>，记作 <span
+class="math inline">\(a\not\equiv b\pmod{m}\)</span></p>
+<p>式 <span class="math inline">\((1)\)</span> 称为<strong>模</strong>
+<span class="math inline">\(m\)</span>
+<strong>的同余式</strong>，或简称<strong>同余式</strong>。</p>
+<p>由于 <span class="math inline">\(m\mid a-b\)</span> 等价于 <span
+class="math inline">\(-m\mid a-b\)</span> ，所以同余式 <span
+class="math inline">\((1)\)</span> 等价于</p>
+<p><span class="math display">\[
+a\equiv b\pmod{(-m)}
+\]</span> <strong>定理1</strong><span
+class="math inline">\(\quad\)</span> <span
+class="math inline">\(a\)</span> 同余于 <span
+class="math inline">\(b\)</span> 模 <span
+class="math inline">\(m\)</span> 的充要条件是 <span
+class="math inline">\(a\)</span> 和 <span
+class="math inline">\(b\)</span> 被 <span
+class="math inline">\(m\)</span> 除后所得的最小非负余数相等，即若 <span
+class="math display">\[
 \begin{aligned}
-a=q_1m+r_1&,0\leq r_1<m\\
-b=q_2m+r_2&,0\leq r_2<m,
-\end{aligned}</script><p>则 $r_1=r_2$。</p>
-<p><strong>性质Ⅰ</strong>$\quad$ 同余是一种等价关系，即有</p>
-<script type="math/tex; mode=display">
+a=q_1m+r_1&amp;,0\leq r_1&lt;m\\
+b=q_2m+r_2&amp;,0\leq r_2&lt;m,
+\end{aligned}
+\]</span> 则 <span class="math inline">\(r_1=r_2\)</span>。</p>
+<p><strong>性质Ⅰ</strong><span class="math inline">\(\quad\)</span>
+同余是一种等价关系，即有 <span class="math display">\[
 \begin{aligned}
 a\equiv a\pmod{m}\\
 a\equiv b\pmod{m}\iff b\equiv a\pmod{m}\\
 a\equiv b\pmod{m}\;,\;b\equiv c\pmod{m}\Rightarrow a\equiv c\pmod{m}
-\end{aligned}</script><p><strong>性质Ⅱ</strong>$\quad$ 同余式可以相加，即若有</p>
-<script type="math/tex; mode=display">
-a\equiv b\pmod{m}\;,\;c\equiv d\pmod{m}\tag{2}</script><p>则有</p>
-<script type="math/tex; mode=display">
-a+c\equiv b+d\pmod m</script><p><strong>性质Ⅲ</strong>$\quad$ 同余式可以相乘，即若式 $(2)$ 成立，则</p>
-<script type="math/tex; mode=display">
-ac\equiv bd\pmod m</script><p><strong>性质Ⅳ</strong>$\quad$ 设 $f(x)=a_nx^n+\cdots+a_0$，$g(x)=b_nx^n+\cdots+b_0$ 是两个整系数多项式，满足</p>
-<script type="math/tex; mode=display">
-a_j\equiv b_j\pmod m\;,\;0\leq j<n\tag{3}</script><p>那么，若 $a\equiv b\pmod m$，则</p>
-<script type="math/tex; mode=display">
-f(a)\equiv g(b)\pmod m</script><p>特别地，<strong>对所有整数</strong> $x$ 有</p>
-<script type="math/tex; mode=display">
-f(x)\equiv g(x)\pmod m\tag{4}</script><p><strong>定义2</strong>$\quad$ 设 $f(x)=a_nx^n+\cdots+a_0$ 和 $g(x)=b_nx^n+\cdots+b_0$ 是两个整系数多项式。当满足条件 $(3)$ 时，称<strong>多项式</strong> $f(x)$ <strong>同余于多项式</strong> $g(x)$ <strong>模</strong> $m$，记作</p>
-<script type="math/tex; mode=display">
-f(x)\equiv g(x)\pmod m</script><p>当满足 $f(x)\equiv g(x)\pmod m$ 时，称<strong>多项式</strong> $f(x)$ <strong>等价于多项式</strong> $g(x)$ <strong>模</strong> $m$，式 $(4)$称为<strong>模</strong> $m$ <strong>的恒等同余式</strong></p>
-<p><strong>性质Ⅴ</strong>$\quad$ 设 $d\geq1$，$d\mid m$，那么，若式 $(1)$ 成立，则 $a\equiv b\pmod d$</p>
-<p><strong>性质Ⅵ</strong>$\quad$ 设 $d\not=0$，那么 $a\equiv b\pmod m$ 等价于 $da\equiv db\pmod{\left\vert d\right\vert m}$</p>
-<p><strong>性质Ⅶ</strong>$\quad$ 同余式 $ca\equiv cb\pmod m$ 等价于 $a\equiv b\pmod{\frac m{\gcd(c,m)}}$</p>
-<p>特别地，当 $\gcd(c,m)=1$ 时，上述同余式等价于 $a\equiv b\pmod m$</p>
-<p><strong>性质Ⅷ</strong>$\qquad$ 若 $m\geq1$，$\gcd(a,m)=1$，则存在 $c$ 使得</p>
-<script type="math/tex; mode=display">
-ca\equiv1\pmod m\tag{5}</script><p><strong>定义3</strong>$\quad$ 若存在 $m\geq1$，$\gcd(a,m)=1$，且满足式 $(5)$，我们把 $c$ 称为 $a$ 对模 $m$ 的逆，记作 $a^{-1}\pmod m$ 或 $a^{-1}$</p>
-<p><strong>性质Ⅸ</strong>$\quad$ 同余式组</p>
-<script type="math/tex; mode=display">
-a\equiv b\pmod{m_j}\;,\;j=1,2,\cdots,k</script><p>同时成立的充要条件是</p>
-<script type="math/tex; mode=display">
-a\equiv b\pmod{[m_1,m_2,\cdots,m_k]}</script><h2 id="1-2-quad-同余类与剩余系"><a href="#1-2-quad-同余类与剩余系" class="headerlink" title="1.2$\quad$同余类与剩余系"></a>1.2$\quad$同余类与剩余系</h2><p><strong>定义4（同余类和剩余系）</strong>$\quad$ 对于 $\forall a\in [0,m-1]$，集合 $\{a+km\}(k\in\mathbb{Z})$ 的所有数模 $m$ 同余，余数都是 $a$，该集合成为模 $m$ 的<strong>同余类</strong>，简记为 $\overline{a}$。</p>
-<p>模 $m$ 的同余类一共有 $m$ 个，分别为 $\overline{0},\overline{1},\overline{2},\cdots,\overline{m-1}$。它们构成 $m$ 的<strong>完全剩余系</strong>。</p>
-<p>$1\sim m$ 中与 $m$ 互质的数代表的同余类共有 $\phi(m)$ 个，它们构成 $m$ 的<strong>简化剩余系</strong>。</p>
-<h1 id="二、费马小定理和欧拉定理"><a href="#二、费马小定理和欧拉定理" class="headerlink" title="二、费马小定理和欧拉定理"></a>二、费马小定理和欧拉定理</h1><p>前置芝士：欧拉函数。</p>
+\end{aligned}
+\]</span> <strong>性质Ⅱ</strong><span
+class="math inline">\(\quad\)</span> 同余式可以相加，即若有 <span
+class="math display">\[
+a\equiv b\pmod{m}\;,\;c\equiv d\pmod{m}\tag{2}
+\]</span></p>
+<p>则有</p>
+<p><span class="math display">\[
+a+c\equiv b+d\pmod m
+\]</span></p>
+<p><strong>性质Ⅲ</strong><span class="math inline">\(\quad\)</span>
+同余式可以相乘，即若式 <span class="math inline">\((2)\)</span>
+成立，则</p>
+<p><span class="math display">\[
+ac\equiv bd\pmod m
+\]</span></p>
+<p><strong>性质Ⅳ</strong><span class="math inline">\(\quad\)</span> 设
+<span class="math inline">\(f(x)=a_nx^n+\cdots+a_0\)</span>，<span
+class="math inline">\(g(x)=b_nx^n+\cdots+b_0\)</span>
+是两个整系数多项式，满足</p>
+<p><span class="math display">\[
+a_j\equiv b_j\pmod m\;,\;0\leq j&lt;n\tag{3}
+\]</span></p>
+<p>那么，若 <span class="math inline">\(a\equiv b\pmod
+m\)</span>，则</p>
+<p><span class="math display">\[
+f(a)\equiv g(b)\pmod m
+\]</span></p>
+<p>特别地，<strong>对所有整数</strong> <span
+class="math inline">\(x\)</span> 有</p>
+<p><span class="math display">\[
+f(x)\equiv g(x)\pmod m\tag{4}
+\]</span></p>
+<p><strong>定义2</strong><span class="math inline">\(\quad\)</span> 设
+<span class="math inline">\(f(x)=a_nx^n+\cdots+a_0\)</span> 和 <span
+class="math inline">\(g(x)=b_nx^n+\cdots+b_0\)</span>
+是两个整系数多项式。当满足条件 <span class="math inline">\((3)\)</span>
+时，称<strong>多项式</strong> <span class="math inline">\(f(x)\)</span>
+<strong>同余于多项式</strong> <span class="math inline">\(g(x)\)</span>
+<strong>模</strong> <span class="math inline">\(m\)</span>，记作</p>
+<p><span class="math display">\[
+f(x)\equiv g(x)\pmod m
+\]</span></p>
+<p>当满足 <span class="math inline">\(f(x)\equiv g(x)\pmod m\)</span>
+时，称<strong>多项式</strong> <span class="math inline">\(f(x)\)</span>
+<strong>等价于多项式</strong> <span class="math inline">\(g(x)\)</span>
+<strong>模</strong> <span class="math inline">\(m\)</span>，式 <span
+class="math inline">\((4)\)</span>称为<strong>模</strong> <span
+class="math inline">\(m\)</span> <strong>的恒等同余式</strong></p>
+<p><strong>性质Ⅴ</strong><span class="math inline">\(\quad\)</span> 设
+<span class="math inline">\(d\geq1\)</span>，<span
+class="math inline">\(d\mid m\)</span>，那么，若式 <span
+class="math inline">\((1)\)</span> 成立，则 <span
+class="math inline">\(a\equiv b\pmod d\)</span></p>
+<p><strong>性质Ⅵ</strong><span class="math inline">\(\quad\)</span> 设
+<span class="math inline">\(d\not=0\)</span>，那么 <span
+class="math inline">\(a\equiv b\pmod m\)</span> 等价于 <span
+class="math inline">\(da\equiv db\pmod{\left\vert d\right\vert
+m}\)</span></p>
+<p><strong>性质Ⅶ</strong><span class="math inline">\(\quad\)</span>
+同余式 <span class="math inline">\(ca\equiv cb\pmod m\)</span> 等价于
+<span class="math inline">\(a\equiv b\pmod{\frac
+m{\gcd(c,m)}}\)</span></p>
+<p>特别地，当 <span class="math inline">\(\gcd(c,m)=1\)</span>
+时，上述同余式等价于 <span class="math inline">\(a\equiv b\pmod
+m\)</span></p>
+<p><strong>性质Ⅷ</strong><span class="math inline">\(\qquad\)</span> 若
+<span class="math inline">\(m\geq1\)</span>，<span
+class="math inline">\(\gcd(a,m)=1\)</span>，则存在 <span
+class="math inline">\(c\)</span> 使得</p>
+<p><span class="math display">\[
+ca\equiv1\pmod m\tag{5}
+\]</span></p>
+<p><strong>定义3</strong><span class="math inline">\(\quad\)</span>
+若存在 <span class="math inline">\(m\geq1\)</span>，<span
+class="math inline">\(\gcd(a,m)=1\)</span>，且满足式 <span
+class="math inline">\((5)\)</span>，我们把 <span
+class="math inline">\(c\)</span> 称为 <span
+class="math inline">\(a\)</span> 对模 <span
+class="math inline">\(m\)</span> 的逆，记作 <span
+class="math inline">\(a^{-1}\pmod m\)</span> 或 <span
+class="math inline">\(a^{-1}\)</span></p>
+<p><strong>性质Ⅸ</strong><span class="math inline">\(\quad\)</span>
+同余式组</p>
+<p><span class="math display">\[
+a\equiv b\pmod{m_j}\;,\;j=1,2,\cdots,k
+\]</span></p>
+<p>同时成立的充要条件是</p>
+<p><span class="math display">\[
+a\equiv b\pmod{[m_1,m_2,\cdots,m_k]}
+\]</span></p>
+<h2 id="quad同余类与剩余系">1.2<span
+class="math inline">\(\quad\)</span>同余类与剩余系</h2>
+<p><strong>定义4（同余类和剩余系）</strong><span
+class="math inline">\(\quad\)</span> 对于 <span
+class="math inline">\(\forall a\in [0,m-1]\)</span>，集合 <span
+class="math inline">\(\{a+km\}(k\in\mathbb{Z})\)</span> 的所有数模 <span
+class="math inline">\(m\)</span> 同余，余数都是 <span
+class="math inline">\(a\)</span>，该集合成为模 <span
+class="math inline">\(m\)</span> 的<strong>同余类</strong>，简记为 <span
+class="math inline">\(\overline{a}\)</span>。</p>
+<p>模 <span class="math inline">\(m\)</span> 的同余类一共有 <span
+class="math inline">\(m\)</span> 个，分别为 <span
+class="math inline">\(\overline{0},\overline{1},\overline{2},\cdots,\overline{m-1}\)</span>。它们构成
+<span class="math inline">\(m\)</span>
+的<strong>完全剩余系</strong>。</p>
+<p><span class="math inline">\(1\sim m\)</span> 中与 <span
+class="math inline">\(m\)</span> 互质的数代表的同余类共有 <span
+class="math inline">\(\phi(m)\)</span> 个，它们构成 <span
+class="math inline">\(m\)</span> 的<strong>简化剩余系</strong>。</p>
+<h1 id="二费马小定理和欧拉定理">二、费马小定理和欧拉定理</h1>
+<p>前置芝士：欧拉函数。</p>
 <p>利用同余基本知识和欧拉函数，即可证明费马小定理和欧拉定理。</p>
-<h2 id="2-1-quad-费马小定理"><a href="#2-1-quad-费马小定理" class="headerlink" title="2.1$\quad$费马小定理"></a>2.1$\quad$费马小定理</h2><p><strong>定理2（费马小定理）</strong>$\quad$ 若 $p$ 是质数，则对于任意整数 $a$，有</p>
-<script type="math/tex; mode=display">
-a^p\equiv a\pmod p</script><h2 id="2-2-quad-欧拉定理"><a href="#2-2-quad-欧拉定理" class="headerlink" title="2.2$\quad$欧拉定理"></a>2.2$\quad$欧拉定理</h2><p><strong>定理3（欧拉定理）</strong>$\quad$ 若正整数 $a,n$ 互质，则</p>
-<script type="math/tex; mode=display">
-a^{\phi(n)}\equiv1\pmod n</script><p>其中，$\phi(n)$ 为欧拉函数。</p>
-<p>特别地，当 $p$ 是质数时，$\phi(p)=p-1$，并且只有 $p$ 的倍数与 $p$ 不互质，所以，只要 $a$ 不是 $p$ 的倍数，就有</p>
-<script type="math/tex; mode=display">
-a^{p-1}\equiv1\pmod p</script><p>两边同乘 $a$ 就是费马小定理。</p>
-<p><strong>证</strong>$\quad$ 设 $n$ 的简化剩余系为 $\{\overline{a_1},\overline{a_2},\cdots,\overline{a_{\phi(n)}}\}$。对于 $\forall a_i,a_j$，若 $a\times a_i\equiv a\times a_j\pmod n$，则 $a\times(a_i-a_j)\equiv 0$。因为 $a,n$ 互质，所以 $a_i-a_j\equiv 0$，即 $a_i\equiv a_j$。故当 $a_i\not=a_j$ 时，$aa_1,aa_j$ 也代表不同的同余类。</p>
-<p>又因为简化剩余系关于模 $n$ 乘法封闭，故 $\overline{aa_1}$ 也在简化剩余系集合中。因此，集合 $\{\overline{a_1},\overline{a_2},\cdots,\overline{a_{\phi(n)}}\}$ 与集合 $\{\overline{aa_1},\overline{aa_2},\cdots,\overline{aa_{\phi(n)}}\}$ 都能表示 $n$ 的简化剩余系，故有</p>
-<script type="math/tex; mode=display">
-a^{\phi(n)}\prod\limits_{i=1}^{\phi(n)} a_i\equiv\prod\limits_{i=1}^{\phi(n)}aa_i\equiv \prod\limits_{i=1}^{\phi(n)}a_i\pmod n</script><p>两边同时除以 $\prod\limits_{i=1}^{\phi(n)}a_i$ 可得</p>
-<script type="math/tex; mode=display">
-a^{\phi(n)}\equiv1\pmod n</script><p>当 $p$ 为质数时，$\phi(p)=p-1$，并且只有 $p$ 的倍数与 $p$ 不互质。所以，只要 $a$ 不是 $p$ 的倍数，$a^{p-1}\equiv1\pmod p$ 显然成立。两边同乘 $a$ 即费马小定理。</p>
+<h2 id="quad费马小定理">2.1<span
+class="math inline">\(\quad\)</span>费马小定理</h2>
+<p><strong>定理2（费马小定理）</strong><span
+class="math inline">\(\quad\)</span> 若 <span
+class="math inline">\(p\)</span> 是质数，则对于任意整数 <span
+class="math inline">\(a\)</span>，有</p>
+<p><span class="math display">\[
+a^p\equiv a\pmod p
+\]</span></p>
+<h2 id="quad欧拉定理">2.2<span
+class="math inline">\(\quad\)</span>欧拉定理</h2>
+<p><strong>定理3（欧拉定理）</strong><span
+class="math inline">\(\quad\)</span> 若正整数 <span
+class="math inline">\(a,n\)</span> 互质，则</p>
+<p><span class="math display">\[
+a^{\phi(n)}\equiv1\pmod n
+\]</span></p>
+<p>其中，<span class="math inline">\(\phi(n)\)</span> 为欧拉函数。</p>
+<p>特别地，当 <span class="math inline">\(p\)</span> 是质数时，<span
+class="math inline">\(\phi(p)=p-1\)</span>，并且只有 <span
+class="math inline">\(p\)</span> 的倍数与 <span
+class="math inline">\(p\)</span> 不互质，所以，只要 <span
+class="math inline">\(a\)</span> 不是 <span
+class="math inline">\(p\)</span> 的倍数，就有</p>
+<p><span class="math display">\[
+a^{p-1}\equiv1\pmod p
+\]</span></p>
+<p>两边同乘 <span class="math inline">\(a\)</span> 就是费马小定理。</p>
+<p><strong>证</strong><span class="math inline">\(\quad\)</span> 设
+<span class="math inline">\(n\)</span> 的简化剩余系为 <span
+class="math inline">\(\{\overline{a_1},\overline{a_2},\cdots,\overline{a_{\phi(n)}}\}\)</span>。对于
+<span class="math inline">\(\forall a_i,a_j\)</span>，若 <span
+class="math inline">\(a\times a_i\equiv a\times a_j\pmod n\)</span>，则
+<span class="math inline">\(a\times(a_i-a_j)\equiv 0\)</span>。因为
+<span class="math inline">\(a,n\)</span> 互质，所以 <span
+class="math inline">\(a_i-a_j\equiv 0\)</span>，即 <span
+class="math inline">\(a_i\equiv a_j\)</span>。故当 <span
+class="math inline">\(a_i\not=a_j\)</span> 时，<span
+class="math inline">\(aa_1,aa_j\)</span> 也代表不同的同余类。</p>
+<p>又因为简化剩余系关于模 <span class="math inline">\(n\)</span>
+乘法封闭，故 <span class="math inline">\(\overline{aa_1}\)</span>
+也在简化剩余系集合中。因此，集合 <span
+class="math inline">\(\{\overline{a_1},\overline{a_2},\cdots,\overline{a_{\phi(n)}}\}\)</span>
+与集合 <span
+class="math inline">\(\{\overline{aa_1},\overline{aa_2},\cdots,\overline{aa_{\phi(n)}}\}\)</span>
+都能表示 <span class="math inline">\(n\)</span> 的简化剩余系，故有</p>
+<p><span class="math display">\[
+a^{\phi(n)}\prod\limits_{i=1}^{\phi(n)}
+a_i\equiv\prod\limits_{i=1}^{\phi(n)}aa_i\equiv
+\prod\limits_{i=1}^{\phi(n)}a_i\pmod n
+\]</span></p>
+<p>两边同时除以 <span
+class="math inline">\(\prod\limits_{i=1}^{\phi(n)}a_i\)</span> 可得</p>
+<p><span class="math display">\[
+a^{\phi(n)}\equiv1\pmod n
+\]</span></p>
+<p>当 <span class="math inline">\(p\)</span> 为质数时，<span
+class="math inline">\(\phi(p)=p-1\)</span>，并且只有 <span
+class="math inline">\(p\)</span> 的倍数与 <span
+class="math inline">\(p\)</span> 不互质。所以，只要 <span
+class="math inline">\(a\)</span> 不是 <span
+class="math inline">\(p\)</span> 的倍数，<span
+class="math inline">\(a^{p-1}\equiv1\pmod p\)</span> 显然成立。两边同乘
+<span class="math inline">\(a\)</span> 即费马小定理。</p>
 <p><strong>证毕。</strong></p>
-<h2 id="2-3-quad-欧拉定理的推论"><a href="#2-3-quad-欧拉定理的推论" class="headerlink" title="2.3$\quad$欧拉定理的推论"></a>2.3$\quad$欧拉定理的推论</h2><p><strong>推论1（欧拉定理推论）</strong>$\quad$ 若正整数 $a,n$ 互质，则对于任意正整数 $b$，有</p>
-<script type="math/tex; mode=display">a^b\equiv a^{b\mod{\phi(n)}}\pmod n</script><p><strong>证</strong>$\quad$ 设 $b=q\times\phi(n)+r$，其中 $0\leq r&lt;\phi(n)$，即 $r=b\mod{\phi(n)}$。利用欧拉定理有</p>
-<script type="math/tex; mode=display">
-a^b\equiv a^{q\times\phi(n)+r}\equiv(a^{\phi(n)})^q\times a^r\equiv 1^q\times a^r\equiv a^r\equiv a^{b\mod{\phi(n)}+\phi(n)}\pmod n</script><p><strong>证毕。</strong></p>
-<p>特别地，当 $a,n$ 不一定互质且 $b&gt;\phi(n)$ 时，有</p>
-<script type="math/tex; mode=display">
-a^b\equiv a^{b\mod{\phi(n)+\phi(n)}}\pmod n</script><h2 id="2-4-quad-光速幂"><a href="#2-4-quad-光速幂" class="headerlink" title="2.4$\quad$光速幂"></a>2.4$\quad$光速幂</h2><p>给定 $a$ 和 $c$，每次询问给出 $b$，求 $a^b\bmod c$。</p>
-<p>我们可以先运用 $a^b\bmod a^{b\bmod \phi(n)+\phi(n)}\pmod c$，将 $b$ 缩小到 $2\phi(c)(&lt;2c)$ 的范围，有</p>
-<script type="math/tex; mode=display">
-a^b=(a^{\sqrt c})^{\left\lfloor\frac{b}{\sqrt c}\right\rfloor}\times a^{b\bmod \sqrt c}</script><p>其中，$\frac{b}{\sqrt c}&lt;2\sqrt c$，$b\bmod \sqrt c&lt;\sqrt c$</p>
-<p>我们预处理 $(a^{\sqrt c})^i$ 和 $a^j$ 即可 $O(\sqrt c)$ 预处理，$O(1)$ 回答询问。</p>
-<h1 id="三、扩展欧几里得算法"><a href="#三、扩展欧几里得算法" class="headerlink" title="三、扩展欧几里得算法"></a>三、扩展欧几里得算法</h1><p>前置芝士：欧几里得算法。</p>
+<h2 id="quad欧拉定理的推论">2.3<span
+class="math inline">\(\quad\)</span>欧拉定理的推论</h2>
+<p><strong>推论1（欧拉定理推论）</strong><span
+class="math inline">\(\quad\)</span> 若正整数 <span
+class="math inline">\(a,n\)</span> 互质，则对于任意正整数 <span
+class="math inline">\(b\)</span>，有</p>
+<p><span class="math display">\[a^b\equiv a^{b\mod{\phi(n)}}\pmod
+n\]</span></p>
+<p><strong>证</strong><span class="math inline">\(\quad\)</span> 设
+<span class="math inline">\(b=q\times\phi(n)+r\)</span>，其中 <span
+class="math inline">\(0\leq r&lt;\phi(n)\)</span>，即 <span
+class="math inline">\(r=b\mod{\phi(n)}\)</span>。利用欧拉定理有</p>
+<p><span class="math display">\[
+a^b\equiv a^{q\times\phi(n)+r}\equiv(a^{\phi(n)})^q\times a^r\equiv
+1^q\times a^r\equiv a^r\equiv a^{b\mod{\phi(n)}+\phi(n)}\pmod n
+\]</span></p>
+<p><strong>证毕。</strong></p>
+<p>特别地，当 <span class="math inline">\(a,n\)</span> 不一定互质且
+<span class="math inline">\(b&gt;\phi(n)\)</span> 时，有</p>
+<p><span class="math display">\[
+a^b\equiv a^{b\mod{\phi(n)+\phi(n)}}\pmod n
+\]</span></p>
+<h2 id="quad光速幂">2.4<span
+class="math inline">\(\quad\)</span>光速幂</h2>
+<p>给定 <span class="math inline">\(a\)</span> 和 <span
+class="math inline">\(c\)</span>，每次询问给出 <span
+class="math inline">\(b\)</span>，求 <span
+class="math inline">\(a^b\bmod c\)</span>。</p>
+<p>我们可以先运用 <span class="math inline">\(a^b\bmod a^{b\bmod
+\phi(n)+\phi(n)}\pmod c\)</span>，将 <span
+class="math inline">\(b\)</span> 缩小到 <span
+class="math inline">\(2\phi(c)(&lt;2c)\)</span> 的范围，有</p>
+<p><span class="math display">\[
+a^b=(a^{\sqrt c})^{\left\lfloor\frac{b}{\sqrt c}\right\rfloor}\times
+a^{b\bmod \sqrt c}
+\]</span></p>
+<p>其中，<span class="math inline">\(\frac{b}{\sqrt c}&lt;2\sqrt
+c\)</span>，<span class="math inline">\(b\bmod \sqrt c&lt;\sqrt
+c\)</span></p>
+<p>我们预处理 <span class="math inline">\((a^{\sqrt c})^i\)</span> 和
+<span class="math inline">\(a^j\)</span> 即可 <span
+class="math inline">\(O(\sqrt c)\)</span> 预处理，<span
+class="math inline">\(O(1)\)</span> 回答询问。</p>
+<h1 id="三扩展欧几里得算法">三、扩展欧几里得算法</h1>
+<p>前置芝士：欧几里得算法。</p>
 <p>本部分着重介绍扩展欧几里得算法、裴蜀定理和乘法逆元相关知识。</p>
-<h2 id="3-1-quad-裴蜀定理"><a href="#3-1-quad-裴蜀定理" class="headerlink" title="3.1$\quad$裴蜀定理"></a>3.1$\quad$裴蜀定理</h2><p><strong>定理4（裴蜀定理）</strong> $\quad$ $\forall a,b\in\mathbb{Z}$，一定存在一组 $x,y\in\mathbb{Z}$，满足</p>
-<script type="math/tex; mode=display">
-ax+by=\gcd(a,b)</script><p><strong>证</strong>$\qquad$ 在欧几里得算法的最后一步，即 $b=0$ 时，我们一定会得出一组整数 $\begin{cases}x=1\\b=0\end{cases}$，使得 $a\times1+0\times0=\gcd(a,0)$。</p>
-<p>由欧几里得算法得 $\gcd(a,b)=\gcd(b,a\bmod b)$。假设存在一组整数 $x,y$，满足 $bx+(a\bmod b)y=\gcd(b,a\bmod b)$。</p>
-<p>因为 $bx+(a\bmod b)y$</p>
-<p>$\begin{aligned}<br>\;\;&amp;=bx+(a-b\left\lfloor\dfrac{a}{b}\right\rfloor)y \\<br>&amp;=bx+ay-b\left\lfloor\dfrac{a}{b}\right\rfloor y \\<br>&amp;=ay+b(x-b\left\lfloor\dfrac{a}{b}\right\rfloor)<br>\end{aligned}$</p>
-<p>所以，令 $x’=y$，$y’=x-\left\lfloor\dfrac{a}{b}\right\rfloor y$，就得到了 $ax’+by’=\gcd(a,b)$。</p>
+<h2 id="quad裴蜀定理">3.1<span
+class="math inline">\(\quad\)</span>裴蜀定理</h2>
+<p><strong>定理4（裴蜀定理）</strong> <span
+class="math inline">\(\quad\)</span> <span class="math inline">\(\forall
+a,b\in\mathbb{Z}\)</span>，一定存在一组 <span
+class="math inline">\(x,y\in\mathbb{Z}\)</span>，满足</p>
+<p><span class="math display">\[
+ax+by=\gcd(a,b)
+\]</span></p>
+<p><strong>证</strong><span class="math inline">\(\qquad\)</span>
+在欧几里得算法的最后一步，即 <span class="math inline">\(b=0\)</span>
+时，我们一定会得出一组整数 <span
+class="math inline">\(\begin{cases}x=1\\b=0\end{cases}\)</span>，使得
+<span class="math inline">\(a\times1+0\times0=\gcd(a,0)\)</span>。</p>
+<p>由欧几里得算法得 <span class="math inline">\(\gcd(a,b)=\gcd(b,a\bmod
+b)\)</span>。假设存在一组整数 <span
+class="math inline">\(x,y\)</span>，满足 <span
+class="math inline">\(bx+(a\bmod b)y=\gcd(b,a\bmod b)\)</span>。</p>
+<p>因为 <span class="math inline">\(bx+(a\bmod b)y\)</span></p>
+<p><span class="math inline">\(\begin{aligned}
+\;\;&amp;=bx+(a-b\left\lfloor\dfrac{a}{b}\right\rfloor)y \\
+&amp;=bx+ay-b\left\lfloor\dfrac{a}{b}\right\rfloor y \\
+&amp;=ay+b(x-b\left\lfloor\dfrac{a}{b}\right\rfloor)
+\end{aligned}\)</span></p>
+<p>所以，令 <span class="math inline">\(x&#39;=y\)</span>，<span
+class="math inline">\(y&#39;=x-\left\lfloor\dfrac{a}{b}\right\rfloor
+y\)</span>，就得到了 <span
+class="math inline">\(ax&#39;+by&#39;=\gcd(a,b)\)</span>。</p>
 <p>对以上过程应用数学归纳法，可知裴蜀定理一定成立。</p>
 <p><strong>证毕。</strong></p>
-<h2 id="3-2-quad-扩展欧几里得算法"><a href="#3-2-quad-扩展欧几里得算法" class="headerlink" title="3.2$\quad$扩展欧几里得算法"></a>3.2$\quad$扩展欧几里得算法</h2><p>上面证明的过程中，我们通过 $ax+(a\bmod b)y=\gcd(a,b)$ 推出了 $ax’+by’=\gcd(a,b)$。按照欧几里得算法的思路，并给出整数 $x$ 和整数 $y$ 的计算方法成为<strong>扩展欧几里得算法</strong>。</p>
+<h2 id="quad扩展欧几里得算法">3.2<span
+class="math inline">\(\quad\)</span>扩展欧几里得算法</h2>
+<p>上面证明的过程中，我们通过 <span class="math inline">\(ax+(a\bmod
+b)y=\gcd(a,b)\)</span> 推出了 <span
+class="math inline">\(ax&#39;+by&#39;=\gcd(a,b)\)</span>。按照欧几里得算法的思路，并给出整数
+<span class="math inline">\(x\)</span> 和整数 <span
+class="math inline">\(y\)</span>
+的计算方法成为<strong>扩展欧几里得算法</strong>。</p>
 <p>下面给出扩展欧几里得算法过程：</p>
-<ol>
-<li><p>给定 $a$ 和 $b$，递归 $\operatorname{exgcd}(a,b)$；</p>
-</li>
-<li><p>是否 $b=0$。如果是，返回 $\begin{cases}x=1\\y=0\end{cases}$；如果不是，递归 $\operatorname{exgcd}(b,a\bmod b)$，并重复进行1和2操作，直至条件成立；</p>
-</li>
-<li><p>每次递归结束后，计算 $\begin{cases}x’=y\\y’=x-\left\lfloor\dfrac{a}{b}\right\rfloor y\end{cases}$。</p>
-</li>
+<ol type="1">
+<li><p>给定 <span class="math inline">\(a\)</span> 和 <span
+class="math inline">\(b\)</span>，递归 <span
+class="math inline">\(\operatorname{exgcd}(a,b)\)</span>；</p></li>
+<li><p>是否 <span class="math inline">\(b=0\)</span>。如果是，返回 <span
+class="math inline">\(\begin{cases}x=1\\y=0\end{cases}\)</span>；如果不是，递归
+<span class="math inline">\(\operatorname{exgcd}(b,a\bmod
+b)\)</span>，并重复进行1和2操作，直至条件成立；</p></li>
+<li><p>每次递归结束后，计算 <span
+class="math inline">\(\begin{cases}x&#39;=y\\y&#39;=x-\left\lfloor\dfrac{a}{b}\right\rfloor
+y\end{cases}\)</span>。</p></li>
 </ol>
-<p>也可以在算法过程中顺便记录 $\gcd(a,b)$。</p>
+<p>也可以在算法过程中顺便记录 <span
+class="math inline">\(\gcd(a,b)\)</span>。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">exgcd</span><span class="params">(ll a,ll b,ll &amp;x,ll&amp;y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)&#123;</span><br><span class="line">        x=<span class="number">1</span>,y=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    ll d=<span class="built_in">exgcd</span>(b,a%b,x,y);</span><br><span class="line">    ll temp=x;</span><br><span class="line">    x=y;</span><br><span class="line">    y=temp-a/b*y;</span><br><span class="line">    <span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ll a,b,x,y;</span><br><span class="line">cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">ll d=<span class="built_in">exgcd</span>(a,b,x,y);</span><br></pre></td></tr></table></figure>
-<p>上述程序求出方程 $ax+by=\gcd(a,b)$ 的一组特解 $x_0,y_0$，并返回 $\gcd(a,b)$，即 $d$。</p>
-<p>对于方程 $ax+by=c$，当且仅当 $d\mid c$ 时有解。我们可以求出 $ax+by=d$ 的一组特解 $x_0,y_0$，然后令 $x_0,y_0$ 同时乘上 $\dfrac{c}{d}$，就得到了<strong>方程</strong> $ax+b=c$ <strong>的特解</strong></p>
-<script type="math/tex; mode=display">
-\dfrac{c}{d}x_0\;,\;\dfrac{c}{d}y_0</script><p>对于方程 $ax+by=d$，我们将其特解表示为 $x_0,y_0$，有 $a(x+m)+b(y-n)=ax+by+am-bn=d$。因为 $ax+by=d$，可以推出 $am-bn=0\Rightarrow am=bn\Rightarrow \dfrac{a}{b}=\dfrac{n}{m}$。由于 $\gcd(a,b)=d$，故 $m$ 和 $n$ 最小只能取 $\dfrac{b}{d}$ 和 $\dfrac{a}{d}$，能保证 $m$ 和 $n$ 为整数。所以，<strong>方程</strong> $ax+by=d$ <strong>的通解</strong>为</p>
-<script type="math/tex; mode=display">
-\begin{cases}x_1=x_0+\dfrac{b}{d}k\\ \\y_1=y_0-\dfrac{a}{d}k\end{cases}(k\in\mathbb{Z})</script><h2 id="3-3-quad-线性同余方程"><a href="#3-3-quad-线性同余方程" class="headerlink" title="3.3$\quad$线性同余方程"></a>3.3$\quad$线性同余方程</h2><p>给定整数 $a,b,m$，求一个整数 $x$ 满足 $ax\equiv b\pmod m$，或者给出无解。</p>
-<p><strong>定义5（线性同余方程）</strong>$\qquad$ 在整数域内，关于 $x$ 的同余方程 $ax\equiv b\pmod m$ 称为<strong>一次同余方程</strong>，也称<strong>线性同余方程</strong>。</p>
-<p>$ax\equiv b\pmod m$ 等价于 $m\mid (ax-b)$，一定存在一个整数 $k$，有 $ax+mk=b$。我们可以利用扩展欧几里得算法对其进行计算。</p>
-<h2 id="3-4-quad-乘法逆元"><a href="#3-4-quad-乘法逆元" class="headerlink" title="3.4$\quad$乘法逆元"></a>3.4$\quad$乘法逆元</h2><p><strong>定义6（乘法逆元）</strong>$\qquad$ 若整数 $b,m$ 互质，并且 $b\mid a$，则存在一个整数 $x$，使得 $\dfrac{a}{b}\equiv ax\pmod m$。称 $x$ 为 $b$ <strong>的模</strong> $m$ <strong>乘法逆元</strong>，记为 $b^{-1}\pmod m$。</p>
-<p>因为 $\dfrac{a}{b}\equiv a\times b^{-1}\equiv\dfrac{a}{b}\times b\times b^{-1}\pmod m$，所以 $b\times b^{-1}\equiv1\pmod m$。</p>
+<p>上述程序求出方程 <span class="math inline">\(ax+by=\gcd(a,b)\)</span>
+的一组特解 <span class="math inline">\(x_0,y_0\)</span>，并返回 <span
+class="math inline">\(\gcd(a,b)\)</span>，即 <span
+class="math inline">\(d\)</span>。</p>
+<p>对于方程 <span class="math inline">\(ax+by=c\)</span>，当且仅当 <span
+class="math inline">\(d\mid c\)</span> 时有解。我们可以求出 <span
+class="math inline">\(ax+by=d\)</span> 的一组特解 <span
+class="math inline">\(x_0,y_0\)</span>，然后令 <span
+class="math inline">\(x_0,y_0\)</span> 同时乘上 <span
+class="math inline">\(\dfrac{c}{d}\)</span>，就得到了<strong>方程</strong>
+<span class="math inline">\(ax+b=c\)</span> <strong>的特解</strong></p>
+<p><span class="math display">\[
+\dfrac{c}{d}x_0\;,\;\dfrac{c}{d}y_0
+\]</span></p>
+<p>对于方程 <span
+class="math inline">\(ax+by=d\)</span>，我们将其特解表示为 <span
+class="math inline">\(x_0,y_0\)</span>，有 <span
+class="math inline">\(a(x+m)+b(y-n)=ax+by+am-bn=d\)</span>。因为 <span
+class="math inline">\(ax+by=d\)</span>，可以推出 <span
+class="math inline">\(am-bn=0\Rightarrow am=bn\Rightarrow
+\dfrac{a}{b}=\dfrac{n}{m}\)</span>。由于 <span
+class="math inline">\(\gcd(a,b)=d\)</span>，故 <span
+class="math inline">\(m\)</span> 和 <span
+class="math inline">\(n\)</span> 最小只能取 <span
+class="math inline">\(\dfrac{b}{d}\)</span> 和 <span
+class="math inline">\(\dfrac{a}{d}\)</span>，能保证 <span
+class="math inline">\(m\)</span> 和 <span
+class="math inline">\(n\)</span> 为整数。所以，<strong>方程</strong>
+<span class="math inline">\(ax+by=d\)</span>
+<strong>的通解</strong>为</p>
+<p><span class="math display">\[
+\begin{cases}x_1=x_0+\dfrac{b}{d}k\\
+\\y_1=y_0-\dfrac{a}{d}k\end{cases}(k\in\mathbb{Z})
+\]</span></p>
+<h2 id="quad线性同余方程">3.3<span
+class="math inline">\(\quad\)</span>线性同余方程</h2>
+<p>给定整数 <span class="math inline">\(a,b,m\)</span>，求一个整数 <span
+class="math inline">\(x\)</span> 满足 <span
+class="math inline">\(ax\equiv b\pmod m\)</span>，或者给出无解。</p>
+<p><strong>定义5（线性同余方程）</strong><span
+class="math inline">\(\qquad\)</span> 在整数域内，关于 <span
+class="math inline">\(x\)</span> 的同余方程 <span
+class="math inline">\(ax\equiv b\pmod m\)</span>
+称为<strong>一次同余方程</strong>，也称<strong>线性同余方程</strong>。</p>
+<p><span class="math inline">\(ax\equiv b\pmod m\)</span> 等价于 <span
+class="math inline">\(m\mid (ax-b)\)</span>，一定存在一个整数 <span
+class="math inline">\(k\)</span>，有 <span
+class="math inline">\(ax+mk=b\)</span>。我们可以利用扩展欧几里得算法对其进行计算。</p>
+<h2 id="quad乘法逆元">3.4<span
+class="math inline">\(\quad\)</span>乘法逆元</h2>
+<p><strong>定义6（乘法逆元）</strong><span
+class="math inline">\(\qquad\)</span> 若整数 <span
+class="math inline">\(b,m\)</span> 互质，并且 <span
+class="math inline">\(b\mid a\)</span>，则存在一个整数 <span
+class="math inline">\(x\)</span>，使得 <span
+class="math inline">\(\dfrac{a}{b}\equiv ax\pmod m\)</span>。称 <span
+class="math inline">\(x\)</span> 为 <span
+class="math inline">\(b\)</span> <strong>的模</strong> <span
+class="math inline">\(m\)</span> <strong>乘法逆元</strong>，记为 <span
+class="math inline">\(b^{-1}\pmod m\)</span>。</p>
+<p>因为 <span class="math inline">\(\dfrac{a}{b}\equiv a\times
+b^{-1}\equiv\dfrac{a}{b}\times b\times b^{-1}\pmod m\)</span>，所以
+<span class="math inline">\(b\times b^{-1}\equiv1\pmod m\)</span>。</p>
 <p>下面是一些求解乘法逆元的方法。</p>
 <p><strong>方法一：解线性同余方程求解乘法逆元</strong></p>
-<p>如果只保证 $b,m$ 互质，那么乘法逆元可以通过求解同余方程 $bx\equiv1\pmod m$ 得到。算法过程已在上文中提及，不再赘述。</p>
+<p>如果只保证 <span class="math inline">\(b,m\)</span>
+互质，那么乘法逆元可以通过求解同余方程 <span
+class="math inline">\(bx\equiv1\pmod m\)</span>
+得到。算法过程已在上文中提及，不再赘述。</p>
 <p><strong>方法二：快速幂求解乘法逆元</strong></p>
 <p>本方法使用有前提条件。</p>
-<p>如果 $m$ 是质数，并用 $p$ 表示 $m$，并且 $b&lt;p$，根据费马小定理， $b^{p-1}\equiv1\pmod p$，即</p>
-<script type="math/tex; mode=display">
-b\times b^{p-2}\equiv1\pmod p</script><p>因此，<strong>当模数</strong> $p$ <strong>为质数时，</strong>$b^{p-2}$ <strong>即为</strong> $b$ <strong>的乘法逆元</strong>。</p>
-<p>我们直接对 $b^{p-2}$ 进行快速幂计算即可得到答案。</p>
+<p>如果 <span class="math inline">\(m\)</span> 是质数，并用 <span
+class="math inline">\(p\)</span> 表示 <span
+class="math inline">\(m\)</span>，并且 <span
+class="math inline">\(b&lt;p\)</span>，根据费马小定理， <span
+class="math inline">\(b^{p-1}\equiv1\pmod p\)</span>，即</p>
+<p><span class="math display">\[
+b\times b^{p-2}\equiv1\pmod p
+\]</span></p>
+<p>因此，<strong>当模数</strong> <span class="math inline">\(p\)</span>
+<strong>为质数时，</strong><span class="math inline">\(b^{p-2}\)</span>
+<strong>即为</strong> <span class="math inline">\(b\)</span>
+<strong>的乘法逆元</strong>。</p>
+<p>我们直接对 <span class="math inline">\(b^{p-2}\)</span>
+进行快速幂计算即可得到答案。</p>
 <p><strong>方法三：线性求解乘法逆元</strong></p>
-<p>给定 $n,p$，求出 $1,2,\cdots,n$ 在模 $p$ 意义下的乘法逆元。</p>
-<p>显而易见，$1^{-1}\equiv1\pmod p$。</p>
-<p>假设当我们递归到 $i(i&gt;1)$ 时已经把前 $i-1$ 个的乘法逆元算出来了，我们设 $j=p\bmod i$，$k=\left\lfloor\dfrac{p}{i}\right\rfloor$，有 $p=ki+j$，即</p>
-<script type="math/tex; mode=display">
-ki+j\equiv 0\pmod p</script><p>两边同乘 $i^{-1}j^{-1}$ 得</p>
-<script type="math/tex; mode=display">
+<p>给定 <span class="math inline">\(n,p\)</span>，求出 <span
+class="math inline">\(1,2,\cdots,n\)</span> 在模 <span
+class="math inline">\(p\)</span> 意义下的乘法逆元。</p>
+<p>显而易见，<span class="math inline">\(1^{-1}\equiv1\pmod
+p\)</span>。</p>
+<p>假设当我们递归到 <span class="math inline">\(i(i&gt;1)\)</span>
+时已经把前 <span class="math inline">\(i-1\)</span>
+个的乘法逆元算出来了，我们设 <span class="math inline">\(j=p\bmod
+i\)</span>，<span
+class="math inline">\(k=\left\lfloor\dfrac{p}{i}\right\rfloor\)</span>，有
+<span class="math inline">\(p=ki+j\)</span>，即</p>
+<p><span class="math display">\[
+ki+j\equiv 0\pmod p
+\]</span></p>
+<p>两边同乘 <span class="math inline">\(i^{-1}j^{-1}\)</span> 得</p>
+<p><span class="math display">\[
 \begin{aligned}
-kj^{-1}+i^{-1}&\equiv0\pmod p\\
-i^{-1}&\equiv kj^{-1}\pmod p\\
-i^{-1}&\equiv \left\lfloor\dfrac{p}{i}\right\rfloor(p\bmod i)^{-1}\pmod p
-\end{aligned}</script><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;p);</span><br><span class="line">    inv[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        inv[i]=(<span class="type">long</span> <span class="type">long</span>)(p - p / i) * inv[p % i] % p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,inv[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>方法四：线性求解任意 $n$ 个数的逆元</strong></p>
-<p>任意给定 $n$ 个数 $a_1,a_2,\cdots,a_n$，求它们在模 $p$ 意义下的乘法逆元，其中，$p$ 为质数。</p>
+kj^{-1}+i^{-1}&amp;\equiv0\pmod p\\
+i^{-1}&amp;\equiv kj^{-1}\pmod p\\
+i^{-1}&amp;\equiv \left\lfloor\dfrac{p}{i}\right\rfloor(p\bmod
+i)^{-1}\pmod p
+\end{aligned}
+\]</span></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;p);</span><br><span class="line">    inv[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        inv[i]=(<span class="type">long</span> <span class="type">long</span>)(p - p / i) * inv[p % i] % p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,inv[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>方法四：线性求解任意 <span class="math inline">\(n\)</span>
+个数的逆元</strong></p>
+<p>任意给定 <span class="math inline">\(n\)</span> 个数 <span
+class="math inline">\(a_1,a_2,\cdots,a_n\)</span>，求它们在模 <span
+class="math inline">\(p\)</span> 意义下的乘法逆元，其中，<span
+class="math inline">\(p\)</span> 为质数。</p>
 <p>我们设</p>
-<script type="math/tex; mode=display">
-s_i=\prod_{i=1}^ia_i</script><p>通过快速幂或者扩展欧几里得算法求得 $s_i$ 的乘法逆元记为 $sv_i$，即</p>
-<script type="math/tex; mode=display">
-sv_i=s_i^{-1}\pmod p</script><p>我们将 $sv_1$ 乘上 $a_i$，会与 $a_i^{-1}\pmod p$ 相消，得</p>
-<script type="math/tex; mode=display">
-a_i\times sv_1=sv_{i-1}</script><p>我们就能递推线性求解乘法逆元。</p>
+<p><span class="math display">\[
+s_i=\prod_{i=1}^ia_i
+\]</span></p>
+<p>通过快速幂或者扩展欧几里得算法求得 <span
+class="math inline">\(s_i\)</span> 的乘法逆元记为 <span
+class="math inline">\(sv_i\)</span>，即</p>
+<p><span class="math display">\[
+sv_i=s_i^{-1}\pmod p
+\]</span></p>
+<p>我们将 <span class="math inline">\(sv_1\)</span> 乘上 <span
+class="math inline">\(a_i\)</span>，会与 <span
+class="math inline">\(a_i^{-1}\pmod p\)</span> 相消，得</p>
+<p><span class="math display">\[
+a_i\times sv_1=sv_{i-1}
+\]</span></p>
+<p>我们就能递推线性求解乘法逆元。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">ll n,p,k,a[MAXN],s[MAXN],t[MAXN];</span><br><span class="line">ll ans=<span class="number">0</span>,temp;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">qpow</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> mod)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(;b;b&gt;&gt;=<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>) ans=(<span class="type">long</span> <span class="type">long</span>)ans*a%mod;</span><br><span class="line">        a=(<span class="type">long</span> <span class="type">long</span>)a*a%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">    s[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    t[n+<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        s[i]=s[i<span class="number">-1</span>]*a[i]%p;</span><br><span class="line">    &#125;</span><br><span class="line">    t[n+<span class="number">1</span>]=<span class="built_in">qpow</span>(s[n],p<span class="number">-2</span>,p);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=n;i;i--)&#123;</span><br><span class="line">        t[i]=t[i+<span class="number">1</span>]*a[i]%p;</span><br><span class="line">    &#125;</span><br><span class="line">    temp=k;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        ans=(ans+(t[i+<span class="number">1</span>]*s[i<span class="number">-1</span>]%p)*temp)%p;</span><br><span class="line">        temp=temp*k%p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-5-quad-威尔逊定理"><a href="#3-5-quad-威尔逊定理" class="headerlink" title="3.5$\quad$威尔逊定理"></a>3.5$\quad$威尔逊定理</h2><p><strong>定理5（威尔逊定理）</strong>$\quad$ 对于任意素数 $p$，有 $(p-1)!\equiv-1\pmod p$。</p>
-<p><strong>证</strong>$\quad$ 我们知道，$x^2\equiv1\pmod p$ 的解只有 $x\equiv\pm1\pmod p$，所以 $2\sim p-2$ 和逆元两两对应。剩下 $1\times (p-1)\equiv -1\pmod p$。</p>
+<h2 id="quad威尔逊定理">3.5<span
+class="math inline">\(\quad\)</span>威尔逊定理</h2>
+<p><strong>定理5（威尔逊定理）</strong><span
+class="math inline">\(\quad\)</span> 对于任意素数 <span
+class="math inline">\(p\)</span>，有 <span
+class="math inline">\((p-1)!\equiv-1\pmod p\)</span>。</p>
+<p><strong>证</strong><span class="math inline">\(\quad\)</span>
+我们知道，<span class="math inline">\(x^2\equiv1\pmod p\)</span>
+的解只有 <span class="math inline">\(x\equiv\pm1\pmod p\)</span>，所以
+<span class="math inline">\(2\sim p-2\)</span> 和逆元两两对应。剩下
+<span class="math inline">\(1\times (p-1)\equiv -1\pmod p\)</span>。</p>
 <p><strong>证毕。</strong></p>
-<h1 id="四、中国剩余定理"><a href="#四、中国剩余定理" class="headerlink" title="四、中国剩余定理"></a>四、中国剩余定理</h1><p>前置芝士：乘法逆元。</p>
+<h1 id="四中国剩余定理">四、中国剩余定理</h1>
+<p>前置芝士：乘法逆元。</p>
 <p>本节主要介绍有关中国剩余定理和扩展中国剩余定理，是解决线性同余方程组问题的重要方法。</p>
-<h2 id="4-1-quad-中国剩余定理"><a href="#4-1-quad-中国剩余定理" class="headerlink" title="4.1$\quad$中国剩余定理"></a>4.1$\quad$中国剩余定理</h2><p><strong>定理6（中国剩余定理，孙子定理）</strong>$\quad$ 设 $m_1,m_2,\cdots,m_n$ 是两两互质的整数，$m=\prod_{i=1}^n{m_i}$，$M_i=m/m_i$，$t_i$ 是线性同余方程 $M_it_i\equiv1\pmod{m_i}$ 的一个解。对于任意的 $n$个整数 $a_1,a_2,\cdots,a_n$，方程组</p>
-<script type="math/tex; mode=display">
+<h2 id="quad中国剩余定理">4.1<span
+class="math inline">\(\quad\)</span>中国剩余定理</h2>
+<p><strong>定理6（中国剩余定理，孙子定理）</strong><span
+class="math inline">\(\quad\)</span> 设 <span
+class="math inline">\(m_1,m_2,\cdots,m_n\)</span>
+是两两互质的整数，<span
+class="math inline">\(m=\prod_{i=1}^n{m_i}\)</span>，<span
+class="math inline">\(M_i=m/m_i\)</span>，<span
+class="math inline">\(t_i\)</span> 是线性同余方程 <span
+class="math inline">\(M_it_i\equiv1\pmod{m_i}\)</span>
+的一个解。对于任意的 <span class="math inline">\(n\)</span>个整数 <span
+class="math inline">\(a_1,a_2,\cdots,a_n\)</span>，方程组</p>
+<p><span class="math display">\[
 \begin{cases}x\equiv a_1\pmod{m_1}\\
 x\equiv a_2\pmod{m_2}\\
 \cdots\\
-x\equiv a_n\pmod{m_n}\end{cases}</script><p>有整数解，解为 $x=\sum_{i=1}^na_iM_it_i$。</p>
-<p><strong>证</strong>$\quad$ 因为 $M_i=m/m_i$ 是除 $m_i$ 之外所有模数的倍数，所以 $\forall k\not=i\;,\;a_iM_it_i\equiv0\pmod{m_k}$。又因为 $a_iM_it_i\equiv a_i\pmod{m_i}$，所以代入 $x=\sum_{i=1}^na_iM_it_i$，原方程组成立。</p>
+x\equiv a_n\pmod{m_n}\end{cases}
+\]</span></p>
+<p>有整数解，解为 <span
+class="math inline">\(x=\sum_{i=1}^na_iM_it_i\)</span>。</p>
+<p><strong>证</strong><span class="math inline">\(\quad\)</span> 因为
+<span class="math inline">\(M_i=m/m_i\)</span> 是除 <span
+class="math inline">\(m_i\)</span> 之外所有模数的倍数，所以 <span
+class="math inline">\(\forall
+k\not=i\;,\;a_iM_it_i\equiv0\pmod{m_k}\)</span>。又因为 <span
+class="math inline">\(a_iM_it_i\equiv a_i\pmod{m_i}\)</span>，所以代入
+<span
+class="math inline">\(x=\sum_{i=1}^na_iM_it_i\)</span>，原方程组成立。</p>
 <p><strong>证毕。</strong></p>
 <p>按照中国剩余定理，我们可以计算线性同余方程组的一个通解（最小解）。另外，我们可以用扩展欧几里得算法求解逆元。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n,a[MAXN],m[MAXN];</span><br><span class="line">ll M,ans,summ[MAXN];</span><br><span class="line"><span class="function">ll <span class="title">qpow</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> mod)</span></span>&#123;</span><br><span class="line">    ll w=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(;b;b&gt;&gt;=<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>) w=w*a%mod;</span><br><span class="line">        a=a*a%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> w;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">exgcd</span><span class="params">(ll a,ll b,ll &amp;x,ll &amp;y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)&#123;</span><br><span class="line">        x=<span class="number">1</span>,y=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">exgcd</span>(b,a%b,y,x);</span><br><span class="line">    y-=a/b*x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">    M=<span class="number">1</span>;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;m[i]&gt;&gt;a[i];</span><br><span class="line">        M*=m[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++) summ[i]=M/m[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        ll x=<span class="number">0</span>,y=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">exgcd</span>(summ[i],m[i],x,y);</span><br><span class="line">        <span class="keyword">if</span>(x&lt;<span class="number">0</span>) x+=m[i];</span><br><span class="line">        ans+=a[i]*summ[i]*x;</span><br><span class="line">        ans%=M;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="4-2-quad-扩展中国剩余定理"><a href="#4-2-quad-扩展中国剩余定理" class="headerlink" title="4.2$\quad$扩展中国剩余定理"></a>4.2$\quad$扩展中国剩余定理</h2><p>中国剩余定理只能处理模数两两互质的情况，无法处理普遍情况。我们可以使用扩展中国剩余定理进行推算。</p>
-<p>对于每两个线性同余方程组 $x\equiv a_1\pmod {m_1}\;,\;x\equiv a_2\pmod{m_2}$，将其转化为不定方程 $x=pm_1+a_1=qm_2+a_2$，移项有 </p>
-<script type="math/tex; mode=display">
-pm_1-qm_2=a_2-a_1</script><p>有裴蜀定理得，方程组有整数解当且仅当 $\gcd(m_1,m_2)|(a_2-a_1)$。这时我们就可以用扩展欧几里得算法得到一组可行解 $(p,q)$，则原来的两个方程可以合并为</p>
-<script type="math/tex; mode=display">
-x\equiv m_1p+a_1\pmod{\text{lcm}(m_1,m_2)}</script><p>我们逐一进行合并即可求解。</p>
+<h2 id="quad扩展中国剩余定理">4.2<span
+class="math inline">\(\quad\)</span>扩展中国剩余定理</h2>
+<p>中国剩余定理只能处理模数两两互质的情况，无法处理普遍情况。我们可以使用扩展中国剩余定理进行推算。</p>
+<p>对于每两个线性同余方程组 <span class="math inline">\(x\equiv a_1\pmod
+{m_1}\;,\;x\equiv a_2\pmod{m_2}\)</span>，将其转化为不定方程 <span
+class="math inline">\(x=pm_1+a_1=qm_2+a_2\)</span>，移项有</p>
+<p><span class="math display">\[
+pm_1-qm_2=a_2-a_1
+\]</span></p>
+<p>有裴蜀定理得，方程组有整数解当且仅当 <span
+class="math inline">\(\gcd(m_1,m_2)|(a_2-a_1)\)</span>。这时我们就可以用扩展欧几里得算法得到一组可行解
+<span
+class="math inline">\((p,q)\)</span>，则原来的两个方程可以合并为</p>
+<p><span class="math display">\[
+x\equiv m_1p+a_1\pmod{\text{lcm}(m_1,m_2)}
+\]</span></p>
+<p>我们逐一进行合并即可求解。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> __int128 ll;</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">    ll a,m;</span><br><span class="line">&#125;;</span><br><span class="line">queue&lt;node&gt; qu;</span><br><span class="line"><span class="function">ll <span class="title">exgcd</span><span class="params">(ll a,ll b,ll &amp;x,ll&amp;y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)&#123;</span><br><span class="line">        x=<span class="number">1</span>,y=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    ll d=<span class="built_in">exgcd</span>(b,a%b,x,y);</span><br><span class="line">    ll temp=x;</span><br><span class="line">    x=y;</span><br><span class="line">    y=temp-a/b*y;</span><br><span class="line">    <span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">lcm</span><span class="params">(ll x,ll y,ll d)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x/d*y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> a,b;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;a,&amp;b);</span><br><span class="line">        qu.<span class="built_in">push</span>(node&#123;b,a&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">        node a,b;</span><br><span class="line">        a=qu.<span class="built_in">front</span>();qu.<span class="built_in">pop</span>();</span><br><span class="line">        b=qu.<span class="built_in">front</span>();qu.<span class="built_in">pop</span>();</span><br><span class="line">        ll k1,k2;</span><br><span class="line">        <span class="keyword">if</span>(a.a&gt;b.a) <span class="built_in">swap</span>(a,b);</span><br><span class="line">        ll c=b.a-a.a;</span><br><span class="line">        ll d=<span class="built_in">exgcd</span>(a.m,b.m,k1,k2);</span><br><span class="line">        k1*=c/d;</span><br><span class="line">        k2*=c/d;</span><br><span class="line">        ll q=b.m/d,p=a.m/d;</span><br><span class="line">        <span class="keyword">if</span>(k1&lt;<span class="number">0</span>)&#123;</span><br><span class="line">            ll k=<span class="built_in">ceil</span>((<span class="number">1.0</span>-k1)/q);</span><br><span class="line">            k1+=k*q;</span><br><span class="line">            k2-=k*p;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            ll k=(k1<span class="number">-1</span>)/q;</span><br><span class="line">            k1-=k*q;</span><br><span class="line">            k2+=k*p;</span><br><span class="line">        &#125;</span><br><span class="line">        node now;</span><br><span class="line">        now.a=k1*a.m+a.a;</span><br><span class="line">        now.m=q*a.m;</span><br><span class="line">        now.a%=now.m;</span><br><span class="line">        qu.<span class="built_in">push</span>(now);</span><br><span class="line">    &#125;</span><br><span class="line">    node ans=qu.<span class="built_in">front</span>();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,(<span class="type">long</span> <span class="type">long</span>)(ans.a%ans.m));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="五、高次同余方程与BSGS算法"><a href="#五、高次同余方程与BSGS算法" class="headerlink" title="五、高次同余方程与BSGS算法"></a>五、高次同余方程与BSGS算法</h1><h2 id="5-1-quad-BSGS算法"><a href="#5-1-quad-BSGS算法" class="headerlink" title="5.1$\quad$BSGS算法"></a>5.1$\quad$BSGS算法</h2><p>给定 $a,b,p$，已知 $a\perp p$，求解 $x$ 满足</p>
-<script type="math/tex; mode=display">
-a^x\equiv b\pmod p</script><p>令 $x=A\left\lceil\sqrt p\right\rceil-B$，其中， $0\leq A,B\leq \left\lceil\sqrt p\right\rceil$，有 $a^{A\left\lceil\sqrt p\right\rceil-B}\equiv b\pmod p$，整理得</p>
-<script type="math/tex; mode=display">
-a^{A\left\lceil\sqrt p\right\rceil}\equiv ba^B\pmod p</script><p>我们逐一枚举 $B$ 即可知道所有 $ba^B$。然后建立 <code>hash</code> 表，逐一计算 $a^{A\left\lceil\sqrt p\right\rceil}$，找到与之相等的 $ba^B$ 即可求出 $x=A\left\lceil\sqrt p\right\rceil-B$。</p>
-<p>时间复杂度 $O(\sqrt p)$。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">BSGS</span><span class="params">()</span></span>&#123;</span><br><span class="line">    map&lt;ll,ll&gt; hash;</span><br><span class="line">    hash.<span class="built_in">clear</span>();</span><br><span class="line">    b%=p;</span><br><span class="line">    ll t=<span class="built_in">sqrt</span>(p)+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;t;i++)&#123;</span><br><span class="line">        ll val=b*<span class="built_in">qpow</span>(a,i,p)%p;</span><br><span class="line">        hash[val]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    a=<span class="built_in">qpow</span>(a,t,p);</span><br><span class="line">    <span class="keyword">if</span>(a==<span class="number">0</span>) <span class="keyword">return</span> (b==<span class="number">0</span>?<span class="number">1</span>:<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;=t;i++)&#123;</span><br><span class="line">        ll val=<span class="built_in">qpow</span>(a,i,p);</span><br><span class="line">        ll j=hash.<span class="built_in">find</span>(val)==hash.<span class="built_in">end</span>()?<span class="number">-1</span>:hash[val];</span><br><span class="line">        <span class="keyword">if</span>(j&gt;=<span class="number">0</span>&amp;&amp;i*t-j&gt;=<span class="number">0</span>) <span class="keyword">return</span> i*t-j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://aiopr-2378.github.io">Aiopr_2378</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://aiopr-2378.github.io/post/2f4ed4efbf3d.html">http://aiopr-2378.github.io/post/2f4ed4efbf3d.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://aiopr-2378.github.io" target="_blank">『初丶晴』的小窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/">数学知识</a></div><div class="post_share"><div class="social-share" data-image="https://pic.rmb.bdstatic.com/bjh/d3ebda876182694665af2c882af19fc6.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/425aabd8d0fb.html" title="组合计数"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/76dce073eeb9db15e1d20779cdee1023.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">组合计数</div></div></a></div><div class="next-post pull-right"><a href="/post/e57ca2fa6cfe.html" title="基环树"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/0841be7408efbf5f5599c450d4798387.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">基环树</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/a1e7c3dbc7c4.html" title="Ramsey 定理"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/05dc677dfc10321e8aecd1f747074b26.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-13</div><div class="title">Ramsey 定理</div></div></a></div><div><a href="/post/449b1b41ce2d.html" title="极限导论与微分"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/97c0f1af864609994177c4519c5fb0bd.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-14</div><div class="title">极限导论与微分</div></div></a></div><div><a href="/post/9b5899dde65e.html" title="三角函数的极限和导数"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/602b0e19b464ce3d44275df2735db093.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-14</div><div class="title">三角函数的极限和导数</div></div></a></div><div><a href="/post/cb74d1c1ba84.html" title="指数、对数、双曲函数的导数与极限"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/0c833a94ae79e6ea1daefeeae408f1bf.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-19</div><div class="title">指数、对数、双曲函数的导数与极限</div></div></a></div><div><a href="/post/daf7d27a167b.html" title="隐函数求导"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/17dd7cc7361a6ffe2eada2274fded14d.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-19</div><div class="title">隐函数求导</div></div></a></div><div><a href="/post/b58f72002ca0.html" title="三角恒等变换"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/1c2b9a4baf41a1537d1a1432b25e3016.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-22</div><div class="title">三角恒等变换</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://sy.hhwdd.com/RequireFile.do?fid=jMdvYrki" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Aiopr_2378</div><div class="author-info__description">欢唱，以我之名！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Aiopr-2378"><i class="fab fa-github"></i><span>连接喵星...</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Aiopr-2378" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="https://space.bilibili.com/483635714" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili" style="color: #00FFFF;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">本网站为个人 blog , 用于记录学习笔记与日常生活。<br> 主页背景为随机图片, 不保证图片质量喵~
+<h1 id="五高次同余方程与bsgs算法">五、高次同余方程与BSGS算法</h1>
+<h2 id="quadbsgs算法">5.1<span
+class="math inline">\(\quad\)</span>BSGS算法</h2>
+<p>给定 <span class="math inline">\(a,b,p\)</span>，已知 <span
+class="math inline">\(a\perp p\)</span>，求解 <span
+class="math inline">\(x\)</span> 满足</p>
+<p><span class="math display">\[
+a^x\equiv b\pmod p
+\]</span></p>
+<p>令 <span class="math inline">\(x=A\left\lceil\sqrt
+p\right\rceil-B\)</span>，其中， <span class="math inline">\(0\leq
+A,B\leq \left\lceil\sqrt p\right\rceil\)</span>，有 <span
+class="math inline">\(a^{A\left\lceil\sqrt p\right\rceil-B}\equiv b\pmod
+p\)</span>，整理得</p>
+<p><span class="math display">\[
+a^{A\left\lceil\sqrt p\right\rceil}\equiv ba^B\pmod p
+\]</span></p>
+<p>我们逐一枚举 <span class="math inline">\(B\)</span> 即可知道所有
+<span class="math inline">\(ba^B\)</span>。然后建立 <code>hash</code>
+表，逐一计算 <span class="math inline">\(a^{A\left\lceil\sqrt
+p\right\rceil}\)</span>，找到与之相等的 <span
+class="math inline">\(ba^B\)</span> 即可求出 <span
+class="math inline">\(x=A\left\lceil\sqrt p\right\rceil-B\)</span>。</p>
+<p>时间复杂度 <span class="math inline">\(O(\sqrt p)\)</span>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">BSGS</span><span class="params">()</span></span>&#123;</span><br><span class="line">    map&lt;ll,ll&gt; hash;</span><br><span class="line">    hash.<span class="built_in">clear</span>();</span><br><span class="line">    b%=p;</span><br><span class="line">    ll t=<span class="built_in">sqrt</span>(p)+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;t;i++)&#123;</span><br><span class="line">        ll val=b*<span class="built_in">qpow</span>(a,i,p)%p;</span><br><span class="line">        hash[val]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    a=<span class="built_in">qpow</span>(a,t,p);</span><br><span class="line">    <span class="keyword">if</span>(a==<span class="number">0</span>) <span class="keyword">return</span> (b==<span class="number">0</span>?<span class="number">1</span>:<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;=t;i++)&#123;</span><br><span class="line">        ll val=<span class="built_in">qpow</span>(a,i,p);</span><br><span class="line">        ll j=hash.<span class="built_in">find</span>(val)==hash.<span class="built_in">end</span>()?<span class="number">-1</span>:hash[val];</span><br><span class="line">        <span class="keyword">if</span>(j&gt;=<span class="number">0</span>&amp;&amp;i*t-j&gt;=<span class="number">0</span>) <span class="keyword">return</span> i*t-j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://aiopr-2378.github.io">Aiopr_2378</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://aiopr-2378.github.io/post/2f4ed4efbf3d.html">http://aiopr-2378.github.io/post/2f4ed4efbf3d.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://aiopr-2378.github.io" target="_blank">『初丶晴』的小窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86/">数学知识</a></div><div class="post_share"><div class="social-share" data-image="https://pic.rmb.bdstatic.com/bjh/d3ebda876182694665af2c882af19fc6.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/425aabd8d0fb.html" title="组合计数"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/76dce073eeb9db15e1d20779cdee1023.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">组合计数</div></div></a></div><div class="next-post pull-right"><a href="/post/e57ca2fa6cfe.html" title="基环树"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/0841be7408efbf5f5599c450d4798387.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">基环树</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/a1e7c3dbc7c4.html" title="Ramsey 定理"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/05dc677dfc10321e8aecd1f747074b26.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-13</div><div class="title">Ramsey 定理</div></div></a></div><div><a href="/post/449b1b41ce2d.html" title="极限导论与微分"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/97c0f1af864609994177c4519c5fb0bd.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-14</div><div class="title">极限导论与微分</div></div></a></div><div><a href="/post/9b5899dde65e.html" title="三角函数的极限和导数"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/602b0e19b464ce3d44275df2735db093.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-14</div><div class="title">三角函数的极限和导数</div></div></a></div><div><a href="/post/daf7d27a167b.html" title="隐函数求导"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/17dd7cc7361a6ffe2eada2274fded14d.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-19</div><div class="title">隐函数求导</div></div></a></div><div><a href="/post/cb74d1c1ba84.html" title="指数、对数、双曲函数的导数与极限"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/0c833a94ae79e6ea1daefeeae408f1bf.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-19</div><div class="title">指数、对数、双曲函数的导数与极限</div></div></a></div><div><a href="/post/b58f72002ca0.html" title="三角恒等变换"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/1c2b9a4baf41a1537d1a1432b25e3016.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-22</div><div class="title">三角恒等变换</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://sy.hhwdd.com/RequireFile.do?fid=jMdvYrki" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Aiopr_2378</div><div class="author-info__description">江之水兮东流，沿湍流兮望归舟。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Aiopr-2378"><i class="fab fa-github"></i><span>连接喵星...</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Aiopr-2378" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="https://space.bilibili.com/483635714" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili" style="color: #00FFFF;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">本网站为个人 blog , 用于记录学习笔记与日常生活。<br> 主页背景为随机图片, 不保证图片质量喵~
 <p align="center">---❄❄❄---</p>
 UPD-2024/4/13 将永久链接从长字段改成了哈希, 以前的阅读量统计都作废了。
 <p align="center">---❄❄❄---</p>
-关注可爱『初丶晴』喵~ <br> 关注可爱『初丶晴』谢谢喵~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">一、基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-quad-%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89%E3%80%81%E5%AE%9A%E7%90%86%E4%B8%8E%E6%80%A7%E8%B4%A8"><span class="toc-text">1.1$\quad$基本定义、定理与性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-quad-%E5%90%8C%E4%BD%99%E7%B1%BB%E4%B8%8E%E5%89%A9%E4%BD%99%E7%B3%BB"><span class="toc-text">1.2$\quad$同余类与剩余系</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86%E5%92%8C%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86"><span class="toc-text">二、费马小定理和欧拉定理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-quad-%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86"><span class="toc-text">2.1$\quad$费马小定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-quad-%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86"><span class="toc-text">2.2$\quad$欧拉定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-quad-%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86%E7%9A%84%E6%8E%A8%E8%AE%BA"><span class="toc-text">2.3$\quad$欧拉定理的推论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-quad-%E5%85%89%E9%80%9F%E5%B9%82"><span class="toc-text">2.4$\quad$光速幂</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95"><span class="toc-text">三、扩展欧几里得算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-quad-%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86"><span class="toc-text">3.1$\quad$裴蜀定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-quad-%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95"><span class="toc-text">3.2$\quad$扩展欧几里得算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-quad-%E7%BA%BF%E6%80%A7%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B"><span class="toc-text">3.3$\quad$线性同余方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-quad-%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83"><span class="toc-text">3.4$\quad$乘法逆元</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-quad-%E5%A8%81%E5%B0%94%E9%80%8A%E5%AE%9A%E7%90%86"><span class="toc-text">3.5$\quad$威尔逊定理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86"><span class="toc-text">四、中国剩余定理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-quad-%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86"><span class="toc-text">4.1$\quad$中国剩余定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-quad-%E6%89%A9%E5%B1%95%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86"><span class="toc-text">4.2$\quad$扩展中国剩余定理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E9%AB%98%E6%AC%A1%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B%E4%B8%8EBSGS%E7%AE%97%E6%B3%95"><span class="toc-text">五、高次同余方程与BSGS算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-quad-BSGS%E7%AE%97%E6%B3%95"><span class="toc-text">5.1$\quad$BSGS算法</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/20e971a77f0b.html" title="有上下界的网络流"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/261aa3065ef2254c3b9eaa532db34f21.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="有上下界的网络流"/></a><div class="content"><a class="title" href="/post/20e971a77f0b.html" title="有上下界的网络流">有上下界的网络流</a><time datetime="2024-07-17T14:03:06.274Z" title="发表于 2024-07-17 22:03:06">2024-07-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/a12cc0ec4a59.html" title="多项式乘法与快速傅里叶变换(FFT)"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/a7efe4d85e1499a394ba47bee2f7a54b.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多项式乘法与快速傅里叶变换(FFT)"/></a><div class="content"><a class="title" href="/post/a12cc0ec4a59.html" title="多项式乘法与快速傅里叶变换(FFT)">多项式乘法与快速傅里叶变换(FFT)</a><time datetime="2024-03-31T00:55:55.375Z" title="发表于 2024-03-31 08:55:55">2024-03-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/b58f72002ca0.html" title="三角恒等变换"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/1c2b9a4baf41a1537d1a1432b25e3016.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="三角恒等变换"/></a><div class="content"><a class="title" href="/post/b58f72002ca0.html" title="三角恒等变换">三角恒等变换</a><time datetime="2024-03-22T14:00:43.640Z" title="发表于 2024-03-22 22:00:43">2024-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/169f0aee837e.html" title="二项式反演"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/706d2475cb2ac120e10c0ea6b1f55b24.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="二项式反演"/></a><div class="content"><a class="title" href="/post/169f0aee837e.html" title="二项式反演">二项式反演</a><time datetime="2024-03-22T14:00:38.660Z" title="发表于 2024-03-22 22:00:38">2024-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/25bc084a1f5a.html" title="二项式定理与二项式系数"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/864c9dd35fc26bcaa69335bf9e92a83a.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="二项式定理与二项式系数"/></a><div class="content"><a class="title" href="/post/25bc084a1f5a.html" title="二项式定理与二项式系数">二项式定理与二项式系数</a><time datetime="2024-03-15T13:04:31.000Z" title="发表于 2024-03-15 21:04:31">2024-03-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Aiopr_2378</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+关注可爱『初丶晴』喵~ <br> 关注可爱『初丶晴』谢谢喵~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">一、基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#quad%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89%E5%AE%9A%E7%90%86%E4%B8%8E%E6%80%A7%E8%B4%A8"><span class="toc-text">1.1\(\quad\)基本定义、定理与性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#quad%E5%90%8C%E4%BD%99%E7%B1%BB%E4%B8%8E%E5%89%A9%E4%BD%99%E7%B3%BB"><span class="toc-text">1.2\(\quad\)同余类与剩余系</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86%E5%92%8C%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86"><span class="toc-text">二、费马小定理和欧拉定理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#quad%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86"><span class="toc-text">2.1\(\quad\)费马小定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#quad%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86"><span class="toc-text">2.2\(\quad\)欧拉定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#quad%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86%E7%9A%84%E6%8E%A8%E8%AE%BA"><span class="toc-text">2.3\(\quad\)欧拉定理的推论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#quad%E5%85%89%E9%80%9F%E5%B9%82"><span class="toc-text">2.4\(\quad\)光速幂</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95"><span class="toc-text">三、扩展欧几里得算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#quad%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86"><span class="toc-text">3.1\(\quad\)裴蜀定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#quad%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95"><span class="toc-text">3.2\(\quad\)扩展欧几里得算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#quad%E7%BA%BF%E6%80%A7%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B"><span class="toc-text">3.3\(\quad\)线性同余方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#quad%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83"><span class="toc-text">3.4\(\quad\)乘法逆元</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#quad%E5%A8%81%E5%B0%94%E9%80%8A%E5%AE%9A%E7%90%86"><span class="toc-text">3.5\(\quad\)威尔逊定理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86"><span class="toc-text">四、中国剩余定理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#quad%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86"><span class="toc-text">4.1\(\quad\)中国剩余定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#quad%E6%89%A9%E5%B1%95%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86"><span class="toc-text">4.2\(\quad\)扩展中国剩余定理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E9%AB%98%E6%AC%A1%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B%E4%B8%8Ebsgs%E7%AE%97%E6%B3%95"><span class="toc-text">五、高次同余方程与BSGS算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#quadbsgs%E7%AE%97%E6%B3%95"><span class="toc-text">5.1\(\quad\)BSGS算法</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/20e971a77f0b.html" title="有上下界的网络流"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/261aa3065ef2254c3b9eaa532db34f21.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="有上下界的网络流"/></a><div class="content"><a class="title" href="/post/20e971a77f0b.html" title="有上下界的网络流">有上下界的网络流</a><time datetime="2024-07-17T14:03:06.274Z" title="发表于 2024-07-17 22:03:06">2024-07-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/a12cc0ec4a59.html" title="多项式乘法与快速傅里叶变换(FFT)"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/a7efe4d85e1499a394ba47bee2f7a54b.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多项式乘法与快速傅里叶变换(FFT)"/></a><div class="content"><a class="title" href="/post/a12cc0ec4a59.html" title="多项式乘法与快速傅里叶变换(FFT)">多项式乘法与快速傅里叶变换(FFT)</a><time datetime="2024-03-31T00:55:55.375Z" title="发表于 2024-03-31 08:55:55">2024-03-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/b58f72002ca0.html" title="三角恒等变换"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/1c2b9a4baf41a1537d1a1432b25e3016.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="三角恒等变换"/></a><div class="content"><a class="title" href="/post/b58f72002ca0.html" title="三角恒等变换">三角恒等变换</a><time datetime="2024-03-22T14:00:43.640Z" title="发表于 2024-03-22 22:00:43">2024-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/169f0aee837e.html" title="二项式反演"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/706d2475cb2ac120e10c0ea6b1f55b24.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="二项式反演"/></a><div class="content"><a class="title" href="/post/169f0aee837e.html" title="二项式反演">二项式反演</a><time datetime="2024-03-22T14:00:38.660Z" title="发表于 2024-03-22 22:00:38">2024-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/25bc084a1f5a.html" title="二项式定理与二项式系数"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.rmb.bdstatic.com/bjh/864c9dd35fc26bcaa69335bf9e92a83a.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="二项式定理与二项式系数"/></a><div class="content"><a class="title" href="/post/25bc084a1f5a.html" title="二项式定理与二项式系数">二项式定理与二项式系数</a><time datetime="2024-03-15T13:04:31.000Z" title="发表于 2024-03-15 21:04:31">2024-03-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Aiopr_2378</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
   if (typeof pangu === 'object') pangu.autoSpacingPage()
   else {
     getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
