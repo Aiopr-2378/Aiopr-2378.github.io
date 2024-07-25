@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>斐波那契数列的重要性质</title>
+      <link href="/post/f23d9ce1afcb.html"/>
+      <url>/post/f23d9ce1afcb.html</url>
+      
+        <content type="html"><![CDATA[<p>斐波那契数列的重要性质</p><p>对于斐波那契数列 <span class="math inline">\(f\)</span>，有如下定义：<span class="math display">\[f_n=\begin{cases}0 &amp; n=0 \\1 &amp; n=1 \\f_{n-1}+f_{n-2} &amp;n&gt;1\end{cases}\]</span> 其有如下重要性质。</p><hr /><p><strong>性质一</strong>   对于 <span class="math inline">\(\foralln\ge 1\)</span>，有 <span class="math display">\[\boxed{f_{n-1}f_{n+1}-f_n^2=(-1)^n}\]</span> <strong>证明</strong>   根据定义，有 <spanclass="math display">\[\begin{aligned}f_{n-1}f_{n+1}-f_n^2&amp;=f_{n-1}(f_{n-1}f_n)-f_n^2 \\&amp;= f_{n-1}^2-f_n(f_{n-1}-f_n) \\&amp;=f_{n-1}^2-f_nf_{n-2} \\&amp;=f_{n-1}f_{n-3}-f_{n-2}^2 \\&amp;=\cdots \\&amp;=(-1)^{n-1}(f_0f_2-f_1^2) \\&amp;=(-1)^n\end{aligned}\]</span> 证毕。</p><hr /><p><strong>性质二</strong>   对于 <span class="math inline">\(\foralln\ge 0,k\ge 1\)</span>，有 <span class="math display">\[\boxed{f_{n+k}=f_{k-1}f_n+f_kf_{n+1}}\]</span> <strong>证明</strong>   设 <spanclass="math inline">\(f_n=a,f_{n+1}=b\)</span>，则有 <spanclass="math display">\[\begin{aligned}f_{n+1}&amp;=a+b \\f_{n+2}&amp;=a+2b \\f_{n+3}&amp;=2a+3b \\\cdots \\f_{n+k}&amp;=f_{k-1}a+f_kb \\&amp;= f_{k-1}f_n+f_kf_{n+1}\end{aligned}\]</span> 上述规律可以表述为 <span class="math inline">\(a,b\)</span>的系数均为相邻两项斐波那契数列且与 <spanclass="math inline">\(k\)</span> 相关。</p><p>证毕。</p><p>上述结论也可表示为 <spanclass="math inline">\(f_m=f_{m-n-1}f_n+f_{m-n}f_{n+1}\)</span>，其中<span class="math inline">\(m&gt;n\ge 0\)</span>。</p><p><strong>性质二   推论一</strong>   若取 <spanclass="math inline">\(k=n\)</span>，则有 <span class="math display">\[f_{2n}=f_n(f_{n-1}+f_{n+1})\]</span> <strong>性质二   推论二</strong>   由推论一可以归纳证明 <spanclass="math display">\[\forall k\in \mathbb N\,,\,f_n\mid f_{nk}\]</span> <strong>性质二   推论三</strong>   推论二可逆，即 <spanclass="math display">\[f_a\mid f_b\Leftrightarrow a\mid b\]</span></p><hr /><p><strong>性质三</strong>   对于 <span class="math inline">\(\foralln\ge 0\)</span>，有 <span class="math display">\[\boxed{(f_n,f_{n+1})=1}\]</span> 其中，<span class="math inline">\((x,y)\)</span> 表示 <spanclass="math inline">\(x\)</span> 与 <spanclass="math inline">\(y\)</span> 的最大公约数。</p><p><strong>证明</strong>   施更相减损术，有 <spanclass="math display">\[\begin{aligned}(f_n,f_n+1)&amp;=(f_n,f_{n+1}-f_n) \\&amp;=(f_n,f_{n-1}) \\&amp;=\cdots \\&amp;=(f_1,f_2) \\&amp;=1\end{aligned}\]</span> 证毕。</p><hr /><p><strong>性质四</strong>   对于 <span class="math inline">\(\foralln,m\ge 0\)</span>，有 <span class="math display">\[\boxed{(f_n,f_m)=f_{(n,m)}}\]</span> 其中，<span class="math inline">\((x,y)\)</span> 表示 <spanclass="math inline">\(x\)</span> 与 <spanclass="math inline">\(y\)</span> 的最大公约数。</p><p><strong>证明</strong>   根据性质二，有 <span class="math display">\[\begin{aligned}(f_n,f_m)=(f_n,f_{m-n-1}f_n+f_{m-n}f_{n+1})\end{aligned}\]</span> 因为 <span class="math inline">\(f_n\midf_{m-n-1}f_n\)</span>，<spanclass="math inline">\((f_n,f_{n+1})=1\)</span>，所以 <spanclass="math display">\[(f_n,f_m)=(f_n,f_{m-n})\]</span> 发现上述等式等价于对下标进行更相减损术，故有 <spanclass="math display">\[(f_n,f_m)=(f_0,f_{(n,m)})=f_{(n,m)}\]</span> 证毕。</p><p>应用此性质，可以完成例题：<ahref="https://www.luogu.com.cn/problem/P1306">洛谷 P1306斐波那契公约数</a>。</p><p>这个性质对于广义斐波那契数列也同样成立。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数学知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>有上下界的网络流</title>
       <link href="/post/20e971a77f0b.html"/>
       <url>/post/20e971a77f0b.html</url>
@@ -88,7 +113,7 @@
       
       <categories>
           
-          <category> 组合数学学习笔记 </category>
+          <category> 数学 </category>
           
       </categories>
       
@@ -113,7 +138,7 @@
       
       <categories>
           
-          <category> 组合数学学习笔记 </category>
+          <category> 数学 </category>
           
       </categories>
       
